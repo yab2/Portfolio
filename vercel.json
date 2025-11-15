@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "ethereal-vision-folio/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "ethereal-vision-folio/dist",
+        "buildCommand": "npm run build"
+      }
+    }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}

@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep space background - almost black with blue undertones */
+    --background: 230 35% 7%;
+    --foreground: 210 100% 95%;
+
+    /* Glass-morphic cards */
+    --card: 230 30% 12%;
+    --card-foreground: 210 100% 95%;
+
+    --popover: 230 30% 12%;
+    --popover-foreground: 210 100% 95%;
+
+    /* Electric cyan/blue primary */
+    --primary: 195 100% 60%;
+    --primary-foreground: 230 35% 7%;
+
+    /* Subtle secondary with purple tint */
+    --secondary: 250 40% 20%;
+    --secondary-foreground: 210 100% 95%;
+
+    --muted: 230 25% 18%;
+    --muted-foreground: 215 15% 65%;
+
+    /* Neon accent purple */
+    --accent: 270 80% 65%;
+    --accent-foreground: 230 35% 7%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 210 100% 95%;
+
+    --border: 230 25% 20%;
+    --input: 230 25% 18%;
+    --ring: 195 100% 60%;
+
+    --radius: 1rem;
+
+    /* Glow colors */
+    --glow-primary: 195 100% 60%;
+    --glow-accent: 270 80% 65%;
+    --glow-secondary: 220 90% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(230, 35%, 7%) 0%, hsl(240, 40%, 12%) 50%, hsl(250, 35%, 10%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(195, 100%, 60%, 0.15) 0%, transparent 70%);
+    --gradient-card: linear-gradient(135deg, hsl(230, 30%, 12%, 0.6) 0%, hsl(240, 35%, 15%, 0.4) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-light tracking-tight;
+    background: linear-gradient(135deg, hsl(230, 35%, 7%) 0%, hsl(240, 40%, 10%) 100%);
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--glow-primary)), 0 0 40px hsl(var(--glow-primary));
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.5), 0 0 40px hsl(var(--glow-primary) / 0.3);
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, hsl(230, 30%, 12%, 0.6) 0%, hsl(240, 35%, 15%, 0.4) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}

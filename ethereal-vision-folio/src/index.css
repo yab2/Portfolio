@@ -93,4 +93,10 @@ All colors MUST be HSL.
     opacity: 0.4;
     pointer-events: none;
   }
+
+  /* Hide the "Built with Spline" watermark */
+  iframe[sandbox] + div[class="spline-watermark"],
+  iframe[sandbox] + a[href="spline.design"] {
+    display: none !important;
+  }
 }

@@ -94,9 +94,47 @@ All colors MUST be HSL.
     pointer-events: none;
   }
 
-  /* Hide the "Built with Spline" watermark */
+  /* Hide the "Built with Spline" watermark - Comprehensive solution */
+
+  /* Original Spline watermark selectors */
   iframe[sandbox] + div[class="spline-watermark"],
   iframe[sandbox] + a[href="spline.design"] {
+    display: none !important;
+  }
+
+  /* Text-based selectors - target elements containing "Built with spline" */
+  div[class*="watermark"],
+  div[class*="spline"],
+  a[href*="spline"],
+  [data-spline-watermark],
+  .spline__watermark {
+    display: none !important;
+  }
+
+  /* Position-based - bottom right corner watermarks */
+  div[style*="position: fixed"][style*="bottom: 10px"][style*="right: 10px"],
+  div[style*="position: fixed"][style*="bottom"][style*="right"],
+  div[style*="z-index: 9999"][style*="position: fixed"] {
+    display: none !important;
+  }
+
+  /* Common container selectors */
+  .spline-container > div:last-child,
+  .spline-wrapper > div:last-child,
+  [data-spline] > div:last-child {
+    display: none !important;
+  }
+
+  /* Any element with specific Spline attributes */
+  *[data-spline-scene] + div,
+  *[data-spline-id] + div {
+    display: none !important;
+  }
+
+  /* Generic text-based approach (if supported) */
+  :has(> :contains("Built with spline")),
+  :has(> :contains("built with spline")),
+  :has(> :contains("SPLINE")) {
     display: none !important;
   }
 }

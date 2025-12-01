@@ -3,7 +3,10 @@
     "allow": [
       "Bash(git add:*)",
       "Bash(git submodule status:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(npm run build:*)",
+      "Bash(git commit:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

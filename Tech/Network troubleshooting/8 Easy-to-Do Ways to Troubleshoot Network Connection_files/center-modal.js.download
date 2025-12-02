@@ -1,0 +1,135 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const popup = document.getElementById('center-modal-popup');
+  if (!popup) return;
+
+  const box = popup.querySelector('.center-modal-box');
+  const closeBtn = popup.querySelector('.modal-close');
+  const form = popup.querySelector('.modal-form');
+  const thankYou = popup.querySelector('.modal-thankyou');
+  const onlyThank = popup.querySelector('.center-only-thankyou');
+  const delay = parseInt(popup.dataset.delay || '3', 10);
+  const cookieNonSub = parseInt(popup.dataset.cookieNonsub || '30', 10);
+  const cookieSub = parseInt(popup.dataset.cookieSub || '365', 10);
+
+  function setCookie(name, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=1; expires=${d.toUTCString()}; path=/`;
+  }
+
+  function hasCookie(name) {
+    return document.cookie.split(';').some(c => c.trim().startsWith(name + '='));
+  }
+
+  if (hasCookie('popup_closed') || hasCookie('popup_subscribed')) return;
+
+  // Show after delay
+  setTimeout(() => {
+    popup.style.display = 'flex';
+    setTimeout(() => popup.classList.add('show'), 20);
+  }, Math.max(0, delay) * 1000);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      popup.classList.remove('show');
+      setTimeout(() => popup.remove(), 400);
+      setCookie('popup_closed', cookieNonSub);
+    });
+  }
+
+  // Inline Error Display
+  function showError(message) {
+    let errorBox = form.querySelector('.modal-error');
+    if (!errorBox) {
+      errorBox = document.createElement('div');
+      errorBox.className = 'modal-error';
+      const inputRow = form.querySelector('.modal-input-row');
+      if (inputRow) {
+        inputRow.insertAdjacentElement('afterend', errorBox);
+      } else {
+        form.appendChild(errorBox);
+      }
+    }
+    errorBox.textContent = message;
+    errorBox.style.display = 'block';
+  }
+
+  function clearError() {
+    if (!form) return;
+    const errorBox = form.querySelector('.modal-error');
+    if (errorBox) {
+      errorBox.textContent = '';
+      errorBox.style.display = 'none';
+    }
+  }
+
+  // Handle form submit
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearError();
+      const emailInput = form.querySelector('input[type="email"]');
+      const email = emailInput ? emailInput.value.trim() : '';
+
+      if (!email || !email.includes('@')) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+
+      const domain = email.split('@')[1]?.toLowerCase() || '';
+      const domainParts = domain.split('.');
+      if (domainParts.length < 2) {
+        showError('Please enter a valid email domain.');
+        return;
+      }
+
+      fetch(popup_ajax.ajax_url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ action: 'save_popup_email', email: email })
+      }).then(res => res.json()).then(data => {
+        if (!data.success && data.data && data.data.message) {
+          const msg = data.data.message;
+          if (msg.includes('already exists')) {
+            showError('This email is already subscribed.');
+            return;
+          }
+          if (msg.includes('Disposable') || msg.includes('non-existent') || msg.includes('Invalid email domain')) {
+            showError('Please enter a valid, real email address.');
+            return;
+          }
+          if (msg.includes('Invalid email address')) {
+            showError('Please enter a properly formatted email address.');
+            return;
+          }
+          showError('There was a problem with your submission. Please try again.');
+          return;
+        }
+
+        if (data.success) {
+          // success: show only the centered thank you block
+          if (onlyThank) {
+            // replace box contents with the thank-you block to avoid parent hide issues
+            const html = onlyThank.innerHTML;
+            box.innerHTML = '';
+            const container = document.createElement('div');
+            container.className = 'center-only-thankyou';
+            container.style.width = '100%';
+            container.innerHTML = html;
+            box.appendChild(container);
+          } else if (thankYou) {
+            // fallback
+            form.style.display = 'none';
+            thankYou.style.display = 'block';
+          }
+
+          setCookie('popup_subscribed', cookieSub);
+          setTimeout(() => { popup.classList.remove('show'); popup.remove(); }, 3500);
+        }
+      }).catch(err => {
+        console.error(err);
+        showError('Something went wrong. Please try again.');
+      });
+    });
+  }
+});

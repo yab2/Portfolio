@@ -7,7 +7,7 @@ import BlogPost from './BlogPost';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface BlogPost {
+interface BlogPostData {
   id: string;
   title: string;
   description: string;
@@ -22,9 +22,9 @@ const BlogSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [showBlogPost, setShowBlogPost] = useState(false);
+  const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
 
-  const blogPosts: BlogPost[] = [
+  const blogPosts: BlogPostData[] = [
     {
       id: 'printer-troubleshooting',
       title: 'Printer Troubleshooting Guide',
@@ -34,6 +34,26 @@ const BlogSection = () => {
       date: 'December 2024',
       thumbnail: '/src/assets/blog/printer-troubleshooting/image.png',
       tags: ['Windows', 'Mac', 'Troubleshooting', 'Help Desk'],
+    },
+    {
+      id: 'network-troubleshooting',
+      title: 'Network Connection Troubleshooting',
+      description: 'Fix internet connectivity issues with 8 simple troubleshooting steps. Learn how to diagnose and resolve Wi-Fi, router, and network adapter problems.',
+      category: 'Network Support',
+      readTime: '10 min read',
+      date: 'December 2024',
+      thumbnail: '/src/assets/blog/network-troubleshooting/router.png',
+      tags: ['Windows', 'Wi-Fi', 'Networking', 'System Admin'],
+    },
+    {
+      id: 'active-directory-password',
+      title: 'Active Directory Password Expiration',
+      description: 'Configure Windows Group Policy to automatically notify users before their passwords expire. Reduce help desk tickets and prevent account lockouts.',
+      category: 'System Administration',
+      readTime: '6 min read',
+      date: 'December 2024',
+      thumbnail: '/src/assets/blog/active-directory-password/notify-users-of-password-expiration-active-directory-886x590.jpg',
+      tags: ['Active Directory', 'Group Policy', 'Security', 'System Admin'],
     },
   ];
 
@@ -75,16 +95,16 @@ const BlogSection = () => {
 
   return (
     <>
-      {showBlogPost && <BlogPost onClose={() => setShowBlogPost(false)} />}
+      {selectedPostId && <BlogPost postId={selectedPostId} onClose={() => setSelectedPostId(null)} />}
 
       <section ref={sectionRef} id="guides" className="relative py-32 overflow-hidden">
       <div className="container mx-auto px-6">
         <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4">
-            IT Support <span className="glow-text">Guides</span>
+            Featured <span className="glow-text">IT Support Guides</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-            Step-by-step troubleshooting guides and technical documentation for IT support and system administration
+            Professional step-by-step troubleshooting guides and technical documentation showcasing expertise in IT support, network administration, and system management
           </p>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-6" />
         </div>
@@ -94,7 +114,7 @@ const BlogSection = () => {
             <div
               key={post.id}
               className="group cursor-pointer"
-              onClick={() => setShowBlogPost(true)}
+              onClick={() => setSelectedPostId(post.id)}
             >
               <div className="glass-card rounded-3xl overflow-hidden h-full transition-all duration-500 hover:glow-border hover:scale-105">
                 {/* Thumbnail */}

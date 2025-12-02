@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Connection Troubleshooting Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+
+        .intro p {
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .step {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step h2 {
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .step p {
+            margin: 15px 0;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .step ul {
+            margin: 15px 0 15px 20px;
+            color: #555;
+        }
+
+        .step li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .step-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            display: block;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box strong {
+            color: #856404;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tip-box p {
+            color: #856404;
+            margin: 0;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .step h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Network Connection Troubleshooting Guide</h1>
+            <p>Step-by-step solutions to fix internet connectivity issues</p>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <p><strong>Is your internet not working?</strong> Don't worry! This guide will walk you through 8 simple troubleshooting steps to get your network connection back online.</p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h2>Check If Other Devices Can Connect</h2>
+                </div>
+                <p>First, find out if the problem is with one device or your entire network.</p>
+                <ul>
+                    <li>Try connecting another device (phone, tablet, or laptop) to your Wi-Fi</li>
+                    <li>If other devices work fine, the problem is with your original device</li>
+                    <li>If nothing connects, the issue is with your router or internet service</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/wifi-phone.png" alt="Checking Wi-Fi on phone" class="step-image">
+                <div class="tip-box">
+                    <strong>Pro Tip:</strong>
+                    <p>Test both Wi-Fi and mobile data on your phone to confirm if the internet itself is working.</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h2>Reboot Your Router and Modem</h2>
+                </div>
+                <p>Restarting your network equipment fixes most connection problems.</p>
+                <ul>
+                    <li>Unplug the power cable from your router and modem</li>
+                    <li>Wait for 30 seconds</li>
+                    <li>Plug the modem back in first and wait for it to fully start</li>
+                    <li>Then plug in the router and wait 1-2 minutes</li>
+                    <li>Try connecting to the internet again</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/router.png" alt="Router with ethernet cable" class="step-image">
+                <div class="tip-box">
+                    <strong>Why This Works:</strong>
+                    <p>Rebooting clears temporary errors and refreshes the connection between your devices and the internet.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h2>Check Your Wi-Fi Settings</h2>
+                </div>
+                <p>Make sure you're connected to the right network with the correct password.</p>
+                <ul>
+                    <li>Open your Wi-Fi settings on your device</li>
+                    <li>Check if you're connected to your home network</li>
+                    <li>If you see "Connected, no internet", disconnect and reconnect</li>
+                    <li>Make sure you entered the correct Wi-Fi password</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/wifi-settings.png" alt="Wi-Fi settings screen" class="step-image">
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h2>Check Network Adapter Properties</h2>
+                </div>
+                <p>On Windows, verify your network adapter is working correctly.</p>
+                <ul>
+                    <li>Right-click the network icon in your taskbar</li>
+                    <li>Select "Open Network & Internet settings"</li>
+                    <li>Click "Change adapter options"</li>
+                    <li>Right-click your Wi-Fi or Ethernet connection</li>
+                    <li>Select "Properties" to check settings</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/properties.png" alt="Network properties window" class="step-image">
+                <div class="tip-box">
+                    <strong>What To Look For:</strong>
+                    <p>Make sure "Internet Protocol Version 4 (TCP/IPv4)" is checked.</p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <h2>Reset Your IP Settings</h2>
+                </div>
+                <p>Setting your device to get an IP address automatically often fixes connection issues.</p>
+                <ul>
+                    <li>Open Network Properties (see Step 4)</li>
+                    <li>Double-click "Internet Protocol Version 4 (TCP/IPv4)"</li>
+                    <li>Select "Obtain an IP address automatically"</li>
+                    <li>Select "Obtain DNS server address automatically"</li>
+                    <li>Click OK and restart your computer</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/edit-ip-settings.png" alt="IP settings configuration" class="step-image">
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">6</div>
+                    <h2>Run Windows Network Troubleshooter</h2>
+                </div>
+                <p>Windows has a built-in tool that automatically finds and fixes common problems.</p>
+                <ul>
+                    <li>Click the Start menu and type "troubleshoot"</li>
+                    <li>Select "Troubleshoot settings"</li>
+                    <li>Click "Network and Internet"</li>
+                    <li>Click "Run the troubleshooter"</li>
+                    <li>Follow the on-screen instructions</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/network-troubleshooter.png" alt="Windows network troubleshooter" class="step-image">
+                <div class="tip-box">
+                    <strong>Quick Tip:</strong>
+                    <p>The troubleshooter will tell you what it found and if it fixed the problem.</p>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">7</div>
+                    <h2>Update Network Drivers</h2>
+                </div>
+                <p>Outdated drivers can cause connection problems. Keep them up to date.</p>
+                <ul>
+                    <li>Right-click the Start menu and select "Device Manager"</li>
+                    <li>Expand "Network adapters"</li>
+                    <li>Right-click your Wi-Fi adapter</li>
+                    <li>Select "Update driver"</li>
+                    <li>Choose "Search automatically for drivers"</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/windows-network.png" alt="Windows network settings" class="step-image">
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">8</div>
+                    <h2>Install Windows Updates</h2>
+                </div>
+                <p>Windows updates often include network fixes and improvements.</p>
+                <ul>
+                    <li>Click the Start menu and select "Settings"</li>
+                    <li>Click "Update & Security"</li>
+                    <li>Click "Windows Update"</li>
+                    <li>Click "Check for updates"</li>
+                    <li>Install any available updates and restart your computer</li>
+                </ul>
+                <img src="8 Easy-to-Do Ways to Troubleshoot Network Connection_files/windows-update-1.png" alt="Windows Update screen" class="step-image">
+                <div class="tip-box">
+                    <strong>Important:</strong>
+                    <p>Always restart your computer after installing updates to apply all changes.</p>
+                </div>
+            </div>
+
+            <div class="intro" style="margin-top: 40px; border-left-color: #28a745;">
+                <p><strong>Still Having Issues?</strong> If none of these steps work, contact your Internet Service Provider (ISP). The problem might be on their end, or you may need professional help.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Network Troubleshooting Guide | Help Desk Support Documentation</p>
+            <p>Created to demonstrate technical support and troubleshooting skills</p>
+        </footer>
+    </div>
+</body>
+</html>

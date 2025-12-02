@@ -1,0 +1,129 @@
+let HANDLESIDEBAR = {
+    floatingBannerPos: function(){
+        jQuery('.sidebarFloatingBanner').show();
+        let bw = jQuery('.sidebarFloatingBanner').width(),
+            bh = jQuery('.sidebarFloatingBanner').height(),
+            ww = jQuery(window).width(),
+            wh = jQuery(window).height();
+
+        if (bw == 0 || bh == 0) {
+            setTimeout(function(){
+                HANDLESIDEBAR.floatingBannerPos();
+            }, 300);
+        } else {
+            let sideOffset = jQuery('#content-wrap').outerWidth() + Math.ceil(jQuery('#content-wrap').offset().left);
+
+            if ((ww - sideOffset) < bw) {
+                jQuery('.sidebarFloatingBanner').hide();
+                return;
+            }
+
+            let t = ((wh - bh - 380) / 2);
+            if (t < 67) t = 67;
+            let l = ((sideOffset + ((ww - sideOffset - bw) / 2)));
+
+            jQuery('.sidebarFloatingBanner').css({
+                'z-index': '10000',
+                'position': 'fixed',
+                'top': t + 'px',
+                'left': l + 'px'
+            }).show();
+        }
+    },
+    stickRightBanner: {
+        selector: '#adngin-Sidebar_03-0',
+        sbHeight: 0,
+        abHeight: 0,
+        abRight: 0,
+        wh: 0,
+        footerOffset: 0,
+        scroll: 0,
+        init: function(){
+            HANDLESIDEBAR.stickRightBanner.wh = jQuery(window).height();
+            HANDLESIDEBAR.stickRightBanner.getAndSetSbRight();
+            jQuery(window).scroll(function(){
+                HANDLESIDEBAR.stickRightBanner.scroll = jQuery(window).scrollTop();
+                HANDLESIDEBAR.stickRightBanner.pos();
+            });
+            jQuery(HANDLESIDEBAR.stickRightBanner.selector).bind('DOMSubtreeModified', function(){
+                HANDLESIDEBAR.stickRightBanner.pos();
+            });
+        },
+        pos: function(){
+            if (HANDLESIDEBAR.stickRightBanner.sbHeight != 0) {
+                HANDLESIDEBAR.stickRightBanner.positionDefault();
+            }
+            HANDLESIDEBAR.stickRightBanner.sbHeight = HANDLESIDEBAR.stickRightBanner.getSbHeight();
+            HANDLESIDEBAR.stickRightBanner.adHeight = jQuery(HANDLESIDEBAR.stickRightBanner.selector).height();
+            if (HANDLESIDEBAR.stickRightBanner.sbHeight < HANDLESIDEBAR.stickRightBanner.scroll) {
+                if (jQuery('#footer').offset().top - HANDLESIDEBAR.stickRightBanner.adHeight - 60 > HANDLESIDEBAR.stickRightBanner.scroll) {
+                    HANDLESIDEBAR.stickRightBanner.positionToWindowFixed();
+                } else {
+                    HANDLESIDEBAR.stickRightBanner.positionToSidebarBottom();
+                }
+            } else {
+                HANDLESIDEBAR.stickRightBanner.positionDefault();
+            }
+        },
+        getSbHeight: function(){
+            let height = Math.ceil(jQuery('aside.sidebar').offset().top);
+            jQuery('aside.sidebar > div').each(function(){
+                if (
+                    !jQuery(this).hasClass('sidebarFloatingBanner')
+                    && jQuery(this).find(HANDLESIDEBAR.stickRightBanner.selector).length == 0
+                ) {
+                    height += jQuery(this).outerHeight(true);
+                }
+            });
+            return height;
+        },
+        getAndSetSbRight: function(){
+            let windowWidth = jQuery(window).width(),
+                left = jQuery('aside.sidebar').offset().left,
+                width = jQuery('aside.sidebar').outerWidth(true);
+            HANDLESIDEBAR.stickRightBanner.abRight = Math.ceil(windowWidth - left - width);
+        },
+        positionToSidebarBottom: function(){
+            jQuery(HANDLESIDEBAR.stickRightBanner.selector).addClass('positioned')
+                .css({'right': '0px', 'top': '', 'bottom': '0px'});
+        },
+        positionToWindowFixed: function(){
+            jQuery(HANDLESIDEBAR.stickRightBanner.selector).addClass('fixed')
+                .css({'right': HANDLESIDEBAR.stickRightBanner.abRight + 'px', 'top': ''});
+        },
+        positionDefault: function(){
+            jQuery(HANDLESIDEBAR.stickRightBanner.selector)
+                .removeClass('positioned').removeClass('fixed')
+                .css({'right': '', 'top': ''});
+        },
+    }
+};
+jQuery().ready(function(){
+    if (jQuery('.sidebarFloatingBanner').length && jQuery(window).width() > 768) {
+        HANDLESIDEBAR.floatingBannerPos();
+
+        jQuery(window).resize(function(){
+            HANDLESIDEBAR.floatingBannerPos();
+        });
+
+        let rd = '';
+        setInterval(function(){
+            let bw = jQuery('.sidebarFloatingBanner').width(),
+                bh = jQuery('.sidebarFloatingBanner').height();
+            let x = bw+'x'+bh;
+            if (x != rd && bw > 0 && bh > 0) {
+                HANDLESIDEBAR.floatingBannerPos();
+                rd = x;
+            }
+        }, 300)
+    }
+
+    if (jQuery(window).width() > 768) {
+        HANDLESIDEBAR.stickRightBanner.init();
+        HANDLESIDEBAR.stickRightBanner.pos();
+        jQuery(window).resize(function(){
+            HANDLESIDEBAR.stickRightBanner.init();
+            HANDLESIDEBAR.stickRightBanner.pos();
+        });
+    }
+});

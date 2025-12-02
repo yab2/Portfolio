@@ -11,6 +11,17 @@ interface BlogPostProps {
 const BlogPost = ({ postId, onClose }: BlogPostProps) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const handleClose = () => {
+    onClose();
+    // Scroll to projects section smoothly after closing
+    setTimeout(() => {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   const postData = blogPostsData[postId];
 
   if (!postData) {
@@ -18,7 +29,7 @@ const BlogPost = ({ postId, onClose }: BlogPostProps) => {
       <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Post not found</h2>
-          <Button onClick={onClose}>Go Back</Button>
+          <Button onClick={handleClose}>Go Back</Button>
         </div>
       </div>
     );
@@ -50,11 +61,11 @@ const BlogPost = ({ postId, onClose }: BlogPostProps) => {
         <div className="container mx-auto px-6 py-8 max-w-5xl">
           {/* Header */}
           <div className="flex items-center justify-between mb-8 sticky top-0 z-10 bg-background/80 backdrop-blur-md py-4 -mt-4 px-4 -mx-4 rounded-xl">
-            <Button variant="ghost" size="sm" onClick={onClose} className="gap-2">
+            <Button variant="ghost" size="sm" onClick={handleClose} className="gap-2">
               <ChevronLeft className="w-4 h-4" />
               Back to Home Labs
             </Button>
-            <button onClick={onClose} className="p-2 rounded-full hover:bg-white/10 transition-colors">
+            <button onClick={handleClose} className="p-2 rounded-full hover:bg-white/10 transition-colors">
               <X className="w-5 h-5" />
             </button>
           </div>

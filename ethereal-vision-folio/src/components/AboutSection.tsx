@@ -14,12 +14,12 @@ const AboutSection = () => {
   const skillsRef = useRef<HTMLDivElement>(null);
 
   const skills = [
-    { name: 'Cloud', icon: CloudArrowUp },
-    { name: 'DevOps', icon: Infinity },
-    { name: 'Cyber Security', icon: ShieldCheck },
-    { name: 'Docker', icon: Package },
-    { name: 'AWS', icon: CloudCheck },
-    { name: 'Azure', icon: Lock },
+    { name: 'Windows Server', icon: CloudArrowUp },
+    { name: 'Active Directory', icon: ShieldCheck },
+    { name: 'Networking', icon: Infinity },
+    { name: 'Help Desk', icon: Package },
+    { name: 'Troubleshooting', icon: CloudCheck },
+    { name: 'System Admin', icon: Lock },
   ];
 
   useEffect(() => {
@@ -104,11 +104,11 @@ const AboutSection = () => {
             </div>
 
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              I'm a passionate Cloud Engineer specializing in architecting secure, scalable infrastructure solutions. With deep expertise in AWS, Azure, and modern DevOps practices, I transform complex challenges into elegant cloud-native systems.
+              I'm a dedicated IT Technician and System Administrator specializing in maintaining robust IT infrastructure and providing exceptional technical support. With expertise in Windows Server, Active Directory, and network administration, I ensure seamless operations for end users.
             </p>
 
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              My approach combines technical excellence with a security-first mindset, ensuring every solution is not just functional but fortified. From containerization to CI/CD pipelines, I build the foundation for tomorrow's digital experiences.
+              My approach combines proactive system maintenance with rapid problem resolution, ensuring every user has the support they need. From troubleshooting hardware issues to managing user accounts, I keep technology running smoothly so businesses can focus on their goals.
             </p>
 
             {/* Skills Grid */}

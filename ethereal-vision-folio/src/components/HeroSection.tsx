@@ -81,7 +81,7 @@ const HeroSection = () => {
               </span>
             </div>
             <div className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white">
-              Cloud Engineer
+              IT Technician / System Administrator
             </div>
           </h1>
 
@@ -90,9 +90,9 @@ const HeroSection = () => {
             ref={subtitleRef}
             className="text-gray-400 text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed font-light px-4"
           >
-            Crafting digital experiences that inspire and engage through innovative
-            design and cutting-edge technology. Specializing in modern web
-            development with a passion for creating immersive user interfaces.
+            Delivering reliable IT support and system administration services that keep
+            businesses running smoothly. Specializing in troubleshooting, system
+            maintenance, and help desk operations with a focus on user satisfaction.
           </p>
 
           {/* CTA Buttons */}

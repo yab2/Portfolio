@@ -30,7 +30,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'IT Support Guide',
     readTime: '8 min read',
     totalSteps: 6,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Printers can stop working for many reasons. The problem might be with your computer, the printer itself, or the connection between them. This guide walks you through the most effective fixes to get your printer working again.',
     proTip: 'Work through these steps in order. Each one builds on the previous, starting with the quickest fixes.',
@@ -153,7 +153,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'Network Support Guide',
     readTime: '10 min read',
     totalSteps: 8,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       "Is your internet not working? Don't worry! This guide will walk you through 8 simple troubleshooting steps to get your network connection back online.",
     proTip: 'First, find out if the problem is with one device or your entire network by testing other devices.',
@@ -289,7 +289,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'System Administration Guide',
     readTime: '6 min read',
     totalSteps: 5,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Learn how to configure Active Directory and Group Policy to notify users of upcoming password expiration. This helps prevent locked accounts and reduces help desk tickets.',
     proTip:
@@ -384,7 +384,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'System Administration Guide',
     readTime: '12 min read',
     totalSteps: 5,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Learn the fundamentals of Group Policy including what it is, key benefits, core definitions, and how policies are processed and applied in an Active Directory environment.',
     proTip:
@@ -479,7 +479,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'System Administration Guide',
     readTime: '15 min read',
     totalSteps: 4,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Master the Group Policy Management Console (GPMC) and learn to create, link, and manage Group Policy Objects with practical examples including security policies and logon messages.',
     proTip:
@@ -574,7 +574,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'System Administration Guide',
     readTime: '18 min read',
     totalSteps: 5,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Take your Group Policy skills to the next level with Preferences, Item-Level Targeting, and Security Filtering to create highly targeted and flexible policies.',
     proTip:
@@ -691,7 +691,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'System Administration Guide',
     readTime: '10 min read',
     totalSteps: 4,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Learn essential troubleshooting techniques to diagnose and fix Group Policy problems, including replication issues, processing failures, and unexpected policy application.',
     proTip:
@@ -780,7 +780,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'Linux Security Guide',
     readTime: '20 min read',
     totalSteps: 8,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'System hardening is critical for protecting Ubuntu systems from security threats. This comprehensive guide covers essential security measures during and after installation, helping you reduce attack surface and improve security defenses for Ubuntu 20.04, 22.04, and 24.04 LTS.',
     proTip: 'Apply these hardening steps in order, starting during installation for maximum security benefit.',
@@ -971,7 +971,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'Windows Support Guide',
     readTime: '9 min read',
     totalSteps: 10,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Unable to log into Windows? Issues like "Incorrect username or password", "Cannot sign-into account", or graphical bugs like missing password fields can prevent access to your system. This comprehensive guide provides step-by-step solutions to regain access to your Windows account.',
     proTip: 'Start with the simpler solutions first before attempting advanced troubleshooting methods like Safe Mode or registry edits.',
@@ -1205,7 +1205,7 @@ export const blogPostsData: Record<string, BlogPostDetails> = {
     category: 'Network Engineering Guide',
     readTime: '25 min read',
     totalSteps: 10,
-    date: 'December 2024',
+    date: 'January 2025',
     overview:
       'Designing a network infrastructure requires careful planning and consideration of business requirements, security, scalability, and reliability. This comprehensive guide walks you through the entire network design process, from initial assessment to deployment and monitoring.',
     proTip: 'Always start with a thorough requirements assessment - a well-designed network addresses current needs while allowing for future growth.',

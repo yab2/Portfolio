@@ -107,9 +107,8 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border/30 text-center">
-          <p className="text-muted-foreground font-light flex items-center justify-center gap-2">
-            © 2025 Dires. Crafted with{' '}
-            <Heart size={18} weight="fill" className="text-accent animate-pulse" /> and code
+          <p className="text-muted-foreground font-light">
+            © 2026 Dires
           </p>
         </div>
       </div>

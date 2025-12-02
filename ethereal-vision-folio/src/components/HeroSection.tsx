@@ -98,14 +98,14 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div ref={ctaRef} className="flex flex-wrap gap-4 justify-center pt-4">
             {/* View My Work - Outlined Button */}
-            <button className="px-8 py-3 text-white border border-gray-600 rounded-full hover:border-gray-400 hover:bg-white/5 transition-all duration-300 font-medium">
+            <a href="#projects" className="px-8 py-3 text-white border border-gray-600 rounded-full hover:border-gray-400 hover:bg-white/5 transition-all duration-300 font-medium">
               View My Work
-            </button>
+            </a>
 
             {/* Hire Me Now - Gradient Button */}
-            <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 font-medium">
+            <a href="#contact" className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 font-medium">
               Hire Me Now
-            </button>
+            </a>
           </div>
         </div>
       </div>

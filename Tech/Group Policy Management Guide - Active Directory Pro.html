@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://activedirectorypro.com/group-policy-guide/#group-policy-basics -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"><title>Group Policy Management Guide - Active Directory Pro</title><link rel="preload" href="./Group Policy Management Guide - Active Directory Pro_files/logo_top.png" as="image" fetchpriority="high"><link rel="preload" href="./Group Policy Management Guide - Active Directory Pro_files/group-policy-management.webp" as="image" imagesrcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management.webp 1200w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management-300x157.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management-1024x536.webp 1024w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management-768x402.webp 768w" imagesizes="(max-width: 1200px) 100vw, 1200px" fetchpriority="high"><link rel="preload" href="./Group Policy Management Guide - Active Directory Pro_files/gpo-benefits.webp" as="image" imagesrcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits-600x301.webp 600w" imagesizes="(max-width: 804px) 100vw, 804px" fetchpriority="high"><link rel="preload" href="./Group Policy Management Guide - Active Directory Pro_files/post.used.css" as="style"><link rel="stylesheet" id="perfmatters-used-css" href="./Group Policy Management Guide - Active Directory Pro_files/post.used.css" media="all">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="robots" content="max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<link rel="canonical" href="https://activedirectorypro.com/group-policy-guide/">
+<meta name="description" content="This is a complete guide to Group Policy Management. In this guide, you will learn the basics of group policy. I’ll demonstrate several examples of how to properly create and manage group policy objects.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Active Directory Pro">
+<meta property="og:title" content="Group Policy Management Guide">
+<meta property="og:description" content="This is a complete guide to Group Policy Management. In this guide, you will learn the basics of group policy. I’ll demonstrate several examples of how to properly create and manage group policy objects.">
+<meta property="og:url" content="https://activedirectorypro.com/group-policy-guide/">
+<meta property="og:image" content="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:image:alt" content="active directory group policy management">
+<meta property="article:published_time" content="2022-09-28T13:10:01+00:00">
+<meta property="article:modified_time" content="2025-11-10T12:04:23+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@adpro99">
+<meta name="twitter:title" content="Group Policy Management Guide">
+<meta name="twitter:description" content="This is a complete guide to Group Policy Management. In this guide, you will learn the basics of group policy. I’ll demonstrate several examples of how to properly create and manage group policy objects.">
+<meta name="twitter:image" content="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management.webp">
+<meta name="twitter:image:alt" content="active directory group policy management">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://activedirectorypro.com/#/schema/WebSite","url":"https://activedirectorypro.com/","name":"Active Directory Pro","inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://activedirectorypro.com/search/{search_term_string}/"},"query-input":"required name=search_term_string"},"publisher":{"@type":"Organization","@id":"https://activedirectorypro.com/#/schema/Organization","name":"Active Directory Pro","url":"https://activedirectorypro.com/","logo":{"@type":"ImageObject","url":"https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png","contentUrl":"https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png","width":200,"height":43,"contentSize":"6633"}}},{"@type":"WebPage","@id":"https://activedirectorypro.com/group-policy-guide/","url":"https://activedirectorypro.com/group-policy-guide/","name":"Group Policy Management Guide &#x2d; Active Directory Pro","description":"This is a complete guide to Group Policy Management. In this guide, you will learn the basics of group policy. I’ll demonstrate several examples of how to properly create and manage group policy objects.","inLanguage":"en-US","isPartOf":{"@id":"https://activedirectorypro.com/#/schema/WebSite"},"potentialAction":{"@type":"ReadAction","target":"https://activedirectorypro.com/group-policy-guide/"},"datePublished":"2022-09-28T13:10:01+00:00","dateModified":"2025-11-10T12:04:23+00:00","author":{"@type":"Person","@id":"https://activedirectorypro.com/#/schema/Person/a287f4b01b5dc38142b17fa507674823","name":"Robert Allen","sameAs":"https://twitter.com/adpro99"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://activedirectorypro.com/group-policy-guide/"},"headline":"Group Policy Management Guide","image":{"@type":"ImageObject","url":"https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management.webp","width":1200,"height":628},"datePublished":"2022-09-28T13:10:01+00:00","dateModified":"2025-11-10T12:04:23+00:00","author":{"@type":"Person","name":"Robert Allen","url":"https://activedirectorypro.com/author/mug/"},"description":"This is a complete guide to Group Policy Management. In this guide, you will learn the basics of group policy. I’ll demonstrate several examples of how to properly create and manage group policy objects."}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 8.82ms meta | 3.19ms boot -->
+
+<link rel="alternate" type="application/rss+xml" title="Active Directory Pro » Feed" href="https://activedirectorypro.com/feed/">
+<link rel="stylesheet" id="generatepress-fonts-css" href="./Group Policy Management Guide - Active Directory Pro_files/fonts.css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" media="all" data-pmdelayedstyle="https://activedirectorypro.com/wp-includes/css/dist/block-library/style.min.css?ver=6.8.1" href="./Group Policy Management Guide - Active Directory Pro_files/style.min.css">
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="safe-svg-svg-icon-style-inline-css">
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{fill:currentColor;height:100%;max-height:100%;max-width:100%;width:100%}
+
+</style>
+<link rel="stylesheet" id="generate-comments-css" media="all" data-pmdelayedstyle="https://activedirectorypro.com/wp-content/themes/generatepress/assets/css/components/comments.min.css?ver=3.6.0" href="./Group Policy Management Guide - Active Directory Pro_files/comments.min.css">
+<link rel="stylesheet" id="generate-widget-areas-css" media="all" data-pmdelayedstyle="https://activedirectorypro.com/wp-content/themes/generatepress/assets/css/components/widget-areas.min.css?ver=3.6.0" href="./Group Policy Management Guide - Active Directory Pro_files/widget-areas.min.css">
+<link rel="stylesheet" id="generate-style-css" media="all" data-pmdelayedstyle="https://activedirectorypro.com/wp-content/themes/generatepress/assets/css/main.min.css?ver=3.6.0" href="./Group Policy Management Guide - Active Directory Pro_files/main.min.css">
+<style id="generate-style-inline-css">
+.generate-page-header, .page-header-image, .page-header-image-single {display:none}
+.is-right-sidebar{width:30%;}.is-left-sidebar{width:20%;}.site-content .content-area{width:100%;}@media (max-width: 992px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+.dynamic-author-image-rounded{border-radius:100%;}.dynamic-featured-image, .dynamic-author-image{vertical-align:middle;}.one-container.blog .dynamic-content-template:not(:last-child), .one-container.archive .dynamic-content-template:not(:last-child){padding-bottom:0px;}.dynamic-entry-excerpt > p:last-child{margin-bottom:0px;}
+.inside-page-hero > *:last-child{margin-bottom:0px;}.header-wrap{position:absolute;left:0px;right:0px;z-index:10;}.header-wrap .site-header{background:transparent;}.header-wrap #site-navigation:not(.toggled), .header-wrap #mobile-header:not(.toggled):not(.navigation-stick), .has-inline-mobile-toggle .mobile-menu-control-wrapper{background:transparent;}.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:hover > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li:focus > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li.sfHover > a, .header-wrap #mobile-header:not(.toggled) .main-nav > ul > li:hover > a, .header-wrap #site-navigation:not(.toggled) .menu-bar-item:not(.close-search):hover > a, .header-wrap #mobile-header:not(.toggled) .menu-bar-item:not(.close-search):hover > a, .header-wrap #site-navigation:not(.toggled) .menu-bar-item:not(.close-search).sfHover > a, .header-wrap #mobile-header:not(.toggled) .menu-bar-item:not(.close-search).sfHover > a{background:transparent;}.header-wrap #site-navigation:not(.toggled) .main-nav > ul > li[class*="current-menu-"] > a, .header-wrap #mobile-header:not(.toggled) .main-nav > ul > li[class*="current-menu-"] > a, .header-wrap #site-navigation:not(.toggled) .main-nav > ul > li[class*="current-menu-"]:hover > a, .header-wrap #mobile-header:not(.toggled) .main-nav > ul > li[class*="current-menu-"]:hover > a{background:transparent;}
+</style>
+<link rel="stylesheet" id="generatepress-dynamic-css" media="all" data-pmdelayedstyle="https://activedirectorypro.com/wp-content/uploads/generatepress/style.min.css?ver=1763904318" href="./Group Policy Management Guide - Active Directory Pro_files/style(1).min.css">
+<link rel="stylesheet" id="generateblocks-global-css" href="./Group Policy Management Guide - Active Directory Pro_files/style-global.css" media="all">
+<style id="generateblocks-inline-css">
+.gb-container.gb-tabs__item:not(.gb-tabs__item-open){display:none;}.gb-container-c8778dc0{max-width:1200px;padding-top:25px;padding-bottom:25px;margin-right:auto;margin-left:auto;}.gb-container-5bdd53c7{margin-bottom:20px;}.gb-container-5bdd53c7 > .gb-inside-container{padding-bottom:20px;max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-5bdd53c7 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-95bff6a7{border-radius:10px;background-color:#f4f5ff;}.gb-container-95bff6a7 > .gb-inside-container{padding:20px;}.gb-grid-wrapper > .gb-grid-column-95bff6a7{width:50%;}.gb-grid-wrapper > .gb-grid-column-95bff6a7 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-da9c7c50{border-radius:10px;background-color:#f4f5ff;}.gb-container-da9c7c50 > .gb-inside-container{padding:20px;}.gb-grid-wrapper > .gb-grid-column-da9c7c50{width:50%;}.gb-grid-wrapper > .gb-grid-column-da9c7c50 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-b7dd8290{border-radius:10px;background-color:#f4f5ff;}.gb-container-b7dd8290 > .gb-inside-container{padding:20px;}.gb-grid-wrapper > .gb-grid-column-b7dd8290{width:50%;}.gb-grid-wrapper > .gb-grid-column-b7dd8290 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-f005c67e{border-radius:10px;background-color:#f4f5ff;}.gb-container-f005c67e > .gb-inside-container{padding:20px;}.gb-grid-wrapper > .gb-grid-column-f005c67e{width:50%;}.gb-grid-wrapper > .gb-grid-column-f005c67e > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-e2f3ce5d{border-radius:10px;background-color:#f4f5ff;}.gb-container-e2f3ce5d > .gb-inside-container{padding:20px;}.gb-grid-wrapper > .gb-grid-column-e2f3ce5d{width:50%;}.gb-grid-wrapper > .gb-grid-column-e2f3ce5d > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-b107cb05{border-radius:10px;background-color:#f4f5ff;}.gb-container-b107cb05 > .gb-inside-container{padding:20px;}.gb-grid-wrapper > .gb-grid-column-b107cb05{width:50%;}.gb-grid-wrapper > .gb-grid-column-b107cb05 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-0a4af58c{margin-top:20px;margin-bottom:40px;border-radius:0;background-color:#364ce9;}.gb-container-0a4af58c > .gb-inside-container{padding:40px 20px;max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-0a4af58c > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-5a854675 > .gb-inside-container{max-width:800px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-5a854675 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-39fdd865{margin-top:20px;margin-bottom:40px;border-radius:0;background-color:#364ce9;}.gb-container-39fdd865 > .gb-inside-container{padding:40px 20px;max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-39fdd865 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-1de41fb0 > .gb-inside-container{max-width:800px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-1de41fb0 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-a53e987c{margin-top:20px;margin-bottom:40px;border-radius:0;background-color:#364ce9;}.gb-container-a53e987c > .gb-inside-container{padding:40px 20px;max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-a53e987c > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-64acafa1 > .gb-inside-container{max-width:800px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-64acafa1 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-f388c673{margin-top:20px;margin-bottom:40px;border-radius:0;background-color:#364ce9;}.gb-container-f388c673 > .gb-inside-container{padding:40px 20px;max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-f388c673 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-4e4720cc > .gb-inside-container{max-width:800px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-4e4720cc > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-822d9666{margin-top:20px;margin-bottom:40px;border-radius:0;background-color:#364ce9;}.gb-container-822d9666 > .gb-inside-container{padding:40px 20px;max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-822d9666 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-fead5807 > .gb-inside-container{max-width:800px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-fead5807 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-270a0695{margin-top:20px;margin-bottom:40px;border-radius:0;background-color:#364ce9;}.gb-container-270a0695 > .gb-inside-container{padding:40px 20px;max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-270a0695 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-c2018655 > .gb-inside-container{max-width:800px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-c2018655 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-10da19dd > .gb-inside-container{max-width:800px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-10da19dd > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-de36e657 > .gb-inside-container{max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-de36e657 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-container-c9b17a56 > .gb-inside-container{max-width:1200px;margin-left:auto;margin-right:auto;}.gb-grid-wrapper > .gb-grid-column-c9b17a56 > .gb-container{display:flex;flex-direction:column;height:100%;}.gb-grid-wrapper-a83d753a{display:flex;flex-wrap:wrap;align-items:center;margin-left:-20px;}.gb-grid-wrapper-a83d753a > .gb-grid-column{box-sizing:border-box;padding-left:20px;padding-bottom:20px;}.gb-grid-wrapper-52043a2b{display:flex;flex-wrap:wrap;align-items:center;margin-left:-20px;}.gb-grid-wrapper-52043a2b > .gb-grid-column{box-sizing:border-box;padding-left:20px;padding-bottom:20px;}.gb-grid-wrapper-75f1bf74{display:flex;flex-wrap:wrap;align-items:center;margin-left:-20px;}.gb-grid-wrapper-75f1bf74 > .gb-grid-column{box-sizing:border-box;padding-left:20px;padding-bottom:20px;}h3.gb-headline-3d53479e{display:flex;align-items:center;justify-content:flex-start;font-size:22px;text-align:left;border-radius:10px;color:#102863;}h3.gb-headline-3d53479e a{color:#102863;}h3.gb-headline-3d53479e .gb-icon{line-height:0;color:#102863;padding-right:1em;}h3.gb-headline-3d53479e .gb-icon svg{width:1.5em;height:1.5em;fill:currentColor;}h3.gb-headline-0351080b{display:flex;align-items:center;justify-content:flex-start;font-size:22px;text-align:left;border-radius:10px;color:#102863;}h3.gb-headline-0351080b a{color:#102863;}h3.gb-headline-0351080b .gb-icon{line-height:0;color:#102863;padding-right:1em;}h3.gb-headline-0351080b .gb-icon svg{width:1.5em;height:1.5em;fill:currentColor;}h3.gb-headline-ca1d7008{display:flex;align-items:center;justify-content:flex-start;font-size:22px;text-align:left;border-radius:10px;color:#102863;}h3.gb-headline-ca1d7008 a{color:#102863;}h3.gb-headline-ca1d7008 .gb-icon{line-height:0;color:#102863;padding-right:1em;}h3.gb-headline-ca1d7008 .gb-icon svg{width:1.5em;height:1.5em;fill:currentColor;}h3.gb-headline-8a1ec2a3{display:flex;align-items:center;justify-content:flex-start;font-size:22px;text-align:left;border-radius:10px;color:#102863;}h3.gb-headline-8a1ec2a3 a{color:#102863;}h3.gb-headline-8a1ec2a3 .gb-icon{line-height:0;color:#102863;padding-right:1em;}h3.gb-headline-8a1ec2a3 .gb-icon svg{width:1.5em;height:1.5em;fill:currentColor;}h3.gb-headline-7cfc08e4{display:flex;align-items:center;justify-content:flex-start;font-size:22px;text-align:left;border-radius:10px;color:#102863;}h3.gb-headline-7cfc08e4 a{color:#102863;}h3.gb-headline-7cfc08e4 .gb-icon{line-height:0;color:#102863;padding-right:1em;}h3.gb-headline-7cfc08e4 .gb-icon svg{width:1.5em;height:1.5em;fill:currentColor;}h3.gb-headline-048f4093{display:flex;align-items:center;justify-content:flex-start;font-size:22px;text-align:left;border-radius:10px;color:#102863;}h3.gb-headline-048f4093 a{color:#102863;}h3.gb-headline-048f4093 .gb-icon{line-height:0;color:#102863;padding-right:1em;}h3.gb-headline-048f4093 .gb-icon svg{width:1.5em;height:1.5em;fill:currentColor;}h3.gb-headline-5f0d1fbe{font-size:32px;text-align:center;}h3.gb-headline-76356398{font-size:32px;text-align:center;}h3.gb-headline-2d8877e9{font-size:32px;text-align:center;}h3.gb-headline-17825432{font-size:32px;text-align:center;}h3.gb-headline-65e89556{font-size:32px;text-align:center;}h3.gb-headline-6795f2b2{font-size:32px;text-align:center;}h3.gb-headline-b9030c93{font-size:32px;text-align:center;}h3.gb-headline-4899c417{font-size:32px;text-align:center;}h3.gb-headline-8eb661be{font-size:32px;text-align:center;}h3.gb-headline-57658099{font-size:32px;text-align:center;padding-top:20px;padding-bottom:0px;}h3.gb-headline-18cbdd37{font-size:32px;text-align:center;padding-top:20px;}h3.gb-headline-987a7b93{font-size:32px;text-align:center;}h3.gb-headline-a18c0539{font-size:32px;text-align:center;padding-top:20px;padding-bottom:20px;}h3.gb-headline-a2c35f50{color:#323F4B;}h3.gb-headline-eaf2c638{color:#323f4b;}h3.gb-headline-45a21044{color:#323f4b;}h3.gb-headline-b3f1f60a{margin-bottom:10px;}.gb-block-image-bfa1d65a{padding-top:10px;padding-bottom:20px;}.gb-image-bfa1d65a{vertical-align:middle;}.gb-block-image-2bfa08fa{padding-top:10px;padding-bottom:20px;}.gb-image-2bfa08fa{vertical-align:middle;}.gb-block-image-93cfd068{padding-top:10px;padding-bottom:20px;}.gb-image-93cfd068{vertical-align:middle;}.gb-block-image-3d224309{padding-top:10px;padding-bottom:20px;}.gb-image-3d224309{vertical-align:middle;}.gb-block-image-a23dba24{padding-top:10px;padding-bottom:20px;}.gb-image-a23dba24{vertical-align:middle;}.gb-block-image-52d27af7{padding-top:10px;padding-bottom:20px;}.gb-image-52d27af7{vertical-align:middle;}.gb-block-image-c877d088{padding-top:10px;padding-bottom:20px;}.gb-image-c877d088{vertical-align:middle;}.gb-block-image-a5aaa243{padding-top:10px;padding-bottom:20px;}.gb-image-a5aaa243{vertical-align:middle;}.gb-block-image-b5a63fce{padding-top:10px;padding-bottom:20px;}.gb-image-b5a63fce{vertical-align:middle;}.gb-block-image-e1237d31{padding-top:10px;padding-bottom:20px;}.gb-image-e1237d31{vertical-align:middle;}.gb-block-image-5e6836e0{padding-top:10px;padding-bottom:20px;}.gb-image-5e6836e0{vertical-align:middle;}.gb-block-image-d255a023{padding-top:10px;padding-bottom:20px;}.gb-image-d255a023{vertical-align:middle;}.gb-block-image-915265db{padding-top:10px;padding-bottom:20px;}.gb-image-915265db{vertical-align:middle;}.gb-block-image-6420d68e{padding-top:10px;padding-bottom:20px;}.gb-image-6420d68e{vertical-align:middle;}.gb-block-image-2427d534{padding-top:10px;padding-bottom:20px;}.gb-image-2427d534{vertical-align:middle;}.gb-block-image-d4cb5f9f{padding-top:10px;padding-bottom:20px;}.gb-image-d4cb5f9f{vertical-align:middle;}.gb-block-image-f129f5eb{padding-top:10px;padding-bottom:20px;}.gb-image-f129f5eb{vertical-align:middle;}.gb-block-image-4c4ddc64{padding-top:10px;padding-bottom:20px;}.gb-image-4c4ddc64{vertical-align:middle;}.gb-block-image-1f317173{padding-top:10px;padding-bottom:20px;}.gb-image-1f317173{vertical-align:middle;}.gb-block-image-2def7c3c{padding-top:10px;padding-bottom:20px;}.gb-image-2def7c3c{vertical-align:middle;}.gb-block-image-f2953120{padding-top:10px;padding-bottom:20px;}.gb-image-f2953120{vertical-align:middle;}.gb-block-image-d3a6cb3c{padding-top:10px;padding-bottom:20px;}.gb-image-d3a6cb3c{vertical-align:middle;}.gb-block-image-efe48864{padding-top:10px;padding-bottom:20px;}.gb-image-efe48864{vertical-align:middle;}.gb-block-image-5fc55918{padding-top:10px;padding-bottom:20px;}.gb-image-5fc55918{vertical-align:middle;}.gb-block-image-1b322d84{padding-top:10px;padding-bottom:20px;}.gb-image-1b322d84{vertical-align:middle;}.gb-block-image-21b0309d{padding-top:10px;padding-bottom:20px;}.gb-image-21b0309d{vertical-align:middle;}.gb-block-image-128e56c1{padding-top:10px;padding-bottom:20px;}.gb-image-128e56c1{vertical-align:middle;}.gb-block-image-60ed1b6a{padding-top:10px;padding-bottom:20px;}.gb-image-60ed1b6a{vertical-align:middle;}.gb-block-image-b8d7d449{padding-top:10px;padding-bottom:20px;}.gb-image-b8d7d449{vertical-align:middle;}.gb-block-image-365783b8{padding-top:10px;padding-bottom:20px;}.gb-image-365783b8{vertical-align:middle;}.gb-block-image-9905278b{padding-top:10px;padding-bottom:20px;}.gb-image-9905278b{vertical-align:middle;}.gb-block-image-e4980610{padding-top:10px;padding-bottom:20px;}.gb-image-e4980610{vertical-align:middle;}.gb-block-image-351bb876{padding-top:10px;padding-bottom:20px;}.gb-image-351bb876{vertical-align:middle;}.gb-block-image-bed194fd{padding-top:10px;padding-bottom:20px;}.gb-image-bed194fd{vertical-align:middle;}.gb-block-image-ef4ad206{padding-top:10px;padding-bottom:20px;}.gb-image-ef4ad206{vertical-align:middle;}.gb-block-image-0f159cb1{padding-top:10px;padding-bottom:20px;}.gb-image-0f159cb1{vertical-align:middle;}.gb-block-image-0c6b934f{padding-top:10px;padding-bottom:20px;}.gb-image-0c6b934f{vertical-align:middle;}.gb-block-image-51c0ecb8{padding-top:10px;padding-bottom:20px;}.gb-image-51c0ecb8{vertical-align:middle;}.gb-block-image-ba25b9d5{padding-top:10px;padding-bottom:20px;}.gb-image-ba25b9d5{vertical-align:middle;}.gb-block-image-1054415a{padding-top:10px;padding-bottom:20px;}.gb-image-1054415a{vertical-align:middle;}@media (max-width: 767px) {.gb-grid-wrapper > .gb-grid-column-95bff6a7{width:100%;}.gb-grid-wrapper > .gb-grid-column-da9c7c50{width:100%;}.gb-grid-wrapper > .gb-grid-column-b7dd8290{width:100%;}.gb-grid-wrapper > .gb-grid-column-f005c67e{width:100%;}.gb-grid-wrapper > .gb-grid-column-e2f3ce5d{width:100%;}.gb-grid-wrapper > .gb-grid-column-b107cb05{width:100%;}}:root{--gb-container-width:1200px;}.gb-container .wp-block-image img{vertical-align:middle;}.gb-grid-wrapper .wp-block-image{margin-bottom:0;}.gb-highlight{background:none;}.gb-shape{line-height:0;}.gb-container-link{position:absolute;top:0;right:0;bottom:0;left:0;z-index:99;}.gb-element-0f784ee5{margin-left:auto;margin-right:auto}@media (max-width:767px){.gb-element-0f784ee5{width:100%;border-radius:0px;padding:4rem 1.5rem}}.gb-element-2586b92b{column-gap:2em;display:grid;grid-template-columns:4fr 1fr 1fr;margin-left:auto;margin-right:auto;max-width:var(--gb-container-width);row-gap:2em}@media (max-width:767px){.gb-element-2586b92b{grid-template-columns:1fr}}.gb-element-6e704d51{column-gap:3rem}@media (max-width:1024px){.gb-element-6e704d51{grid-column:span 3}}@media (max-width:767px){.gb-element-6e704d51{align-items:center;display:flex;flex-direction:column;grid-column:unset;row-gap:2rem;text-align:center}}.gb-element-71aac024{align-items:center;column-gap:1.5rem;margin-top:6px}.gb-element-71aac024 a{color:var(--base-3)}.gb-element-71aac024 a:hover{color:var(--accent-3)}.gb-element-a2b638d8{column-gap:1.5rem;display:flex;margin-bottom:2.25rem}.gb-element-ba846b51 a{color:var(--contrast-3)}.gb-element-ba846b51 a:hover{color:var(--accent)}@media (max-width:767px){.gb-element-ba846b51{align-items:center;display:flex;flex-direction:column;text-align:center}}.gb-element-66a9fa7e a{color:var(--contrast-3)}.gb-element-66a9fa7e a:hover{color:var(--accent)}@media (max-width:767px){.gb-element-66a9fa7e{align-items:center;display:flex;flex-direction:column;text-align:center}}.gb-media-89daa1e1{height:36px;margin-bottom:2rem;width:160px}.gb-text-24425b3a{align-items:center;column-gap:0.5em;display:inline-flex;font-size:1.25rem}.gb-text-24425b3a:is(:hover,:focus) .gb-shape svg{color:var(--accent)}.gb-text-24425b3a .gb-shape svg{width:1em;height:1em;fill:currentColor;color:var(--base)}.gb-text-1f822009{align-items:center;color:var(--base-3);column-gap:0.5em;display:inline-flex;font-size:1.25rem}.gb-text-1f822009:is(:hover,:focus) .gb-shape svg{color:var(--accent)}.gb-text-1f822009 .gb-shape svg{width:1em;height:1em;fill:currentColor;color:var(--base)}.gb-text-86f38eb4{align-items:center;color:var(--base-3);column-gap:0.5em;display:inline-flex;font-size:1.25rem}.gb-text-86f38eb4:is(:hover,:focus) .gb-shape svg{color:var(--accent)}.gb-text-86f38eb4 .gb-shape svg{width:1em;height:1em;fill:currentColor;color:var(--base)}.gb-text-31ba4be1{align-items:center;color:var(--base-3);column-gap:0.5em;display:inline-flex;font-size:1.25rem}.gb-text-31ba4be1:is(:hover,:focus) .gb-shape svg{color:var(--accent)}.gb-text-31ba4be1 .gb-shape svg{width:1em;height:1em;fill:currentColor;color:var(--base)}.gb-text-53128b9a{align-items:center;color:var(--contrast-3);column-gap:0.25em;display:inline-flex;font-size:.9375rem}.gb-text-53128b9a .gb-shape svg{width:1em;height:1em;fill:currentColor}.gb-text-449ab36c{color:var(--contrast);display:flex;font-size:.9375rem;font-weight:700;letter-spacing:1.5px;margin-bottom:1rem;text-transform:uppercase}.gb-text-8397340e{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-5a0206b8{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-db47c569{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-dea2abeb{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-b6c42ff0{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-ae85e960{color:var(--contrast);display:flex;font-size:.9375rem;font-weight:700;letter-spacing:1.5px;margin-bottom:1rem;text-transform:uppercase}.gb-text-a3706837{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-b6124c98{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-2c5131e0{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}.gb-text-8f95cfdb{display:flex;font-size:1rem;line-height:1.5em;margin-bottom:.25rem}
+</style>
+<link rel="stylesheet" id="generate-blog-images-css" media="all" data-pmdelayedstyle="https://activedirectorypro.com/wp-content/plugins/gp-premium/blog/functions/css/featured-images.min.css?ver=2.5.5" href="./Group Policy Management Guide - Active Directory Pro_files/featured-images.min.css">
+<link rel="stylesheet" id="generate-offside-css" href="./Group Policy Management Guide - Active Directory Pro_files/offside.min.css" media="all">
+<style id="generate-offside-inline-css">
+:root{--gp-slideout-width:265px;}.slideout-navigation.main-navigation{background-color:var(--contrast);}.slideout-navigation.main-navigation .main-nav ul li a{color:var(--base-2);}.slideout-navigation.main-navigation ul ul{background-color:var(--contrast);}.slideout-navigation.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .slideout-navigation.main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .slideout-navigation.main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a{color:var(--accent-2);background-color:var(--contrast);}.slideout-navigation.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--base-2);background-color:var(--contrast);}.slideout-navigation, .slideout-navigation a{color:var(--base-2);}.slideout-navigation button.slideout-exit{color:var(--base-2);padding-left:24px;padding-right:24px;}.slide-opened nav.toggled .menu-toggle:before{display:none;}@media (max-width: 992px){.menu-bar-item.slideout-toggle{display:none;}}
+.slideout-navigation.main-navigation .main-nav ul li a{font-family:inherit;font-weight:700;font-size:1.125rem;}
+</style>
+<link rel="stylesheet" id="generate-navigation-branding-css" media="all" data-pmdelayedstyle="https://activedirectorypro.com/wp-content/plugins/gp-premium/menu-plus/functions/css/navigation-branding-flex.min.css?ver=2.5.5" href="./Group Policy Management Guide - Active Directory Pro_files/navigation-branding-flex.min.css">
+<style id="generate-navigation-branding-inline-css">
+.main-navigation.has-branding.grid-container .navigation-branding, .main-navigation.has-branding:not(.grid-container) .inside-navigation:not(.grid-container) .navigation-branding{margin-left:10px;}.main-navigation .sticky-navigation-logo, .main-navigation.navigation-stick .site-logo:not(.mobile-header-logo){display:none;}.main-navigation.navigation-stick .sticky-navigation-logo{display:block;}.navigation-branding img, .site-logo.mobile-header-logo img{height:60px;width:auto;}.navigation-branding .main-title{line-height:60px;}@media (max-width: 1210px){#site-navigation .navigation-branding, #sticky-navigation .navigation-branding{margin-left:10px;}}@media (max-width: 992px){.main-navigation.has-branding.nav-align-center .menu-bar-items, .main-navigation.has-sticky-branding.navigation-stick.nav-align-center .menu-bar-items{margin-left:auto;}.navigation-branding{margin-right:auto;margin-left:10px;}.navigation-branding .main-title, .mobile-header-navigation .site-logo{margin-left:10px;}.navigation-branding img, .site-logo.mobile-header-logo{height:60px;}.navigation-branding .main-title{line-height:60px;}}
+</style>
+<script src="./Group Policy Management Guide - Active Directory Pro_files/jquery.min.js.download" id="jquery-core-js" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+<link rel="https://api.w.org/" href="https://activedirectorypro.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://activedirectorypro.com/wp-json/wp/v2/posts/32455"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://activedirectorypro.com/xmlrpc.php?rsd">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://activedirectorypro.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Factivedirectorypro.com%2Fgroup-policy-guide%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://activedirectorypro.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Factivedirectorypro.com%2Fgroup-policy-guide%2F&amp;format=xml">
+<meta name="generator" content="Easy Digital Downloads v3.6.0">
+<!-- Google tag (gtag.js) -->
+<script async="" src="./Group Policy Management Guide - Active Directory Pro_files/js" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+<script data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YDZCWLNK12');
+</script>		<style id="wp-custom-css">
+			body {
+  overflow-x: hidden;
+}
+
+span.mobile-menu {
+    display: none;
+}
+
+.entry-title {
+	margin-bottom:.3em;
+}
+.entry-meta {
+	margin-bottom:2em;
+	color:#5A5B6A
+}
+
+article img {
+	padding-bottom:1.5rem;
+}
+
+.search-results .page-title {
+    margin-bottom: 40px;
+}
+
+
+footer.entry-meta {
+	padding-top:25px;
+}
+
+.entry-title {
+	font-size:3rem
+}
+
+@media (max-width: 768px) {
+  .entry-title {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+/* GeneratePress Site CSS */  /* End GeneratePress Site CSS */		</style>
+		<noscript><style>.perfmatters-lazy[data-src]{display:none !important;}</style></noscript><style>.perfmatters-lazy.pmloaded,.perfmatters-lazy.pmloaded>img,.perfmatters-lazy>img.pmloaded,.perfmatters-lazy[data-ll-status=entered]{animation:500ms pmFadeIn}@keyframes pmFadeIn{0%{opacity:0}100%{opacity:1}}</style><link href="./Group Policy Management Guide - Active Directory Pro_files/jquery.min.js.download" rel="preload" as="script"><link href="./Group Policy Management Guide - Active Directory Pro_files/sticky.min.js.download" rel="preload" as="script"><link href="./Group Policy Management Guide - Active Directory Pro_files/offside.min.js.download" rel="preload" as="script"><link href="./Group Policy Management Guide - Active Directory Pro_files/smooth-scroll.min.js.download" rel="preload" as="script"><link href="./Group Policy Management Guide - Active Directory Pro_files/menu.min.js.download" rel="preload" as="script"><link href="./Group Policy Management Guide - Active Directory Pro_files/js" rel="preload" as="script"><script type="text/javascript" async="" src="./Group Policy Management Guide - Active Directory Pro_files/f.txt"></script></head>
+
+<body class="wp-singular post-template-default single single-post postid-32455 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-generatepress post-image-above-header post-image-aligned-center slideout-enabled slideout-mobile sticky-menu-slide sticky-enabled desktop-sticky-menu no-sidebar nav-float-right one-container header-aligned-left dropdown-hover edd-js offside-js--init using-mouse">
+		<style>.edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; }</style>
+	<script data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">/* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */</script>
+	<div class="header-wrap"><a class="screen-reader-text skip-link" href="https://activedirectorypro.com/group-policy-guide/#content" title="Skip to content">Skip to content</a>		<header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Site">
+			<div class="inside-header grid-container">
+				<div class="site-logo">
+					<a href="https://activedirectorypro.com/" rel="home">
+						<img data-perfmatters-preload="" class="header-image is-logo-image" alt="Active Directory Pro" src="./Group Policy Management Guide - Active Directory Pro_files/logo_top.png" width="200" height="43" fetchpriority="high">
+					</a>
+				</div>	<nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Mobile Toggle">
+				<button data-nav="site-navigation" class="menu-toggle" aria-controls="generate-slideout-menu" aria-expanded="false">
+			<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>		</button>
+	</nav>
+			<nav class="has-sticky-branding main-navigation sub-menu-right stuckElement is_stuck navigation-stick navigation-clone sticky-navigation-transition" id="sticky-navigation" aria-label="Primary" style="z-index: 10000; transform: translateY(0px); transition: transform 300ms ease-in-out; margin-top: 0px; position: fixed; top: 0px; width: 1058.83px;">
+			<div class="inside-navigation grid-container">
+				<div class="navigation-branding"><div class="sticky-navigation-logo">
+					<a href="https://activedirectorypro.com/" title="Active Directory Pro" rel="home">
+						<img src="./Group Policy Management Guide - Active Directory Pro_files/logo_top.png" class="is-logo-image perfmatters-lazy entered pmloaded" alt="Active Directory Pro" width="200" height="43" data-src="https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png" data-ll-status="loaded"><noscript><img src="https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png" class="is-logo-image" alt="Active Directory Pro" width="200" height="43" /></noscript>
+					</a>
+				</div></div>				<button class="menu-toggle" aria-controls="generate-slideout-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-nav_menu" class=" menu sf-menu"><li id="menu-item-54422" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-54422"><a href="https://activedirectorypro.com/group-policy-guide/#">Products<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu" id="menu-item-54422-sub-menu">
+	<li id="menu-item-54423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54423"><a href="https://activedirectorypro.com/ad-pro-toolkit/">AD Pro Toolkit</a></li>
+	<li id="menu-item-54424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54424"><a href="https://activedirectorypro.com/365-pro-toolkit/">365 Pro Toolkit</a></li>
+	<li id="menu-item-55622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55622"><a href="https://activedirectorypro.com/reporting/">AD Reporting Tool</a></li>
+</ul>
+</li>
+<li id="menu-item-60181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60181"><a href="https://activedirectorypro.com/pricing/">Pricing</a></li>
+<li id="menu-item-60202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60202"><a href="https://docs.activedirectorypro.com/">Docs</a></li>
+<li id="menu-item-58369" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-58369"><a href="https://activedirectorypro.com/blog/">Blog</a></li>
+<li id="menu-item-60327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60327"><a href="https://activedirectorypro.com/download/">Download</a></li>
+</ul></div>			</div>
+		</nav><nav class="has-sticky-branding main-navigation sub-menu-right is_stuck navigation-stick navigation-clone sticky-navigation-transition" id="sticky-placeholder" aria-label="Primary" aria-hidden="true" style="visibility: hidden;">
+			<div class="inside-navigation grid-container">
+				<div class="navigation-branding"><div class="sticky-navigation-logo">
+					<a href="https://activedirectorypro.com/" title="Active Directory Pro" rel="home">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;200&#39;%20height=&#39;43&#39;%20viewBox=&#39;0%200%20200%2043&#39;%3E%3C/svg%3E" class="is-logo-image perfmatters-lazy" alt="Active Directory Pro" width="200" height="43" data-src="https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png"><noscript><img src="https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png" class="is-logo-image" alt="Active Directory Pro" width="200" height="43" /></noscript>
+					</a>
+				</div></div>				<button class="menu-toggle" aria-controls="generate-slideout-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-nav_menu" class=" menu sf-menu"><li id="menu-item-54422" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-54422"><a href="https://activedirectorypro.com/group-policy-guide/#">Products<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu" id="menu-item-54422-sub-menu">
+	<li id="menu-item-54423" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54423"><a href="https://activedirectorypro.com/ad-pro-toolkit/">AD Pro Toolkit</a></li>
+	<li id="menu-item-54424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54424"><a href="https://activedirectorypro.com/365-pro-toolkit/">365 Pro Toolkit</a></li>
+	<li id="menu-item-55622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55622"><a href="https://activedirectorypro.com/reporting/">AD Reporting Tool</a></li>
+</ul>
+</li>
+<li id="menu-item-60181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60181"><a href="https://activedirectorypro.com/pricing/">Pricing</a></li>
+<li id="menu-item-60202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60202"><a href="https://docs.activedirectorypro.com/">Docs</a></li>
+<li id="menu-item-58369" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-58369"><a href="https://activedirectorypro.com/blog/">Blog</a></li>
+<li id="menu-item-60327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60327"><a href="https://activedirectorypro.com/download/">Download</a></li>
+</ul></div>			</div>
+		</nav>
+					</div>
+		</header>
+		</div><!-- .header-wrap -->
+	<div class="site grid-container container hfeed" id="page">
+				<div class="site-content" id="content">
+			
+	<div class="content-area" id="primary">
+		<main class="site-main" id="main">
+			
+<article id="post-32455" class="post-32455 post type-post status-publish format-standard has-post-thumbnail hentry category-group-policy">
+	<div class="inside-article">
+		<div class="featured-image  page-header-image-single ">
+				<img data-perfmatters-preload="" width="1200" height="628" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-management.webp" class="attachment-full size-full" alt="active directory group policy management" decoding="async" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management.webp 1200w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management-300x157.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management-1024x536.webp 1024w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-management-768x402.webp 768w" sizes="(max-width: 1200px) 100vw, 1200px" fetchpriority="high">
+			</div>			<header class="entry-header">
+				<h1 class="entry-title">Group Policy Management Guide</h1>		<div class="entry-meta">
+			<span class="posted-on"><time class="entry-date updated-date" datetime="2025-11-10T07:04:23-05:00" itemprop="dateModified">Last Updated: November 10, 2025</time></span> <span class="byline">by <span class="author vcard"><a class="url fn n" href="https://activedirectorypro.com/author/mug/" title="View all posts by Robert Allen" rel="author"><span class="author-name">Robert Allen</span></a></span></span> 		</div>
+					</header>
+			
+		<div class="entry-content">
+			<div class="gb-container gb-container-3770dbd3">
+<div class="gb-container gb-container-c8778dc0">
+
+<h2 class="wp-block-heading">Overview</h2>
+
+
+
+<p>To manage Group Policy in Active Directory, you would use the Group Policy Management Console (GPMC). Before making changes to Group Policy Objects (GPOs), it’s crucial to understand the basics of managing them correctly. A single misconfigured GPO can disrupt your entire network and impact business operations. In this tutorial, I’ll walk you through the fundamentals of Group Policy and how to apply GPOs properly.</p>
+
+</div>
+</div>
+
+<div class="gb-container gb-container-5bdd53c7"><div class="gb-inside-container">
+<div class="gb-grid-wrapper gb-grid-wrapper-a83d753a">
+<div class="gb-grid-column gb-grid-column-95bff6a7"><div class="gb-container gb-container-95bff6a7 .css-box-shadow"><div class="gb-inside-container">
+
+<h3 class="gb-headline gb-headline-3d53479e"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path></svg></span><span class="gb-headline-text"><a href="https://activedirectorypro.com/group-policy-guide/#group-policy-basics">Lesson 1 – Group Policy Basics</a></span></h3>
+
+
+
+<p class="has-text-align-left">In this lesson, you will learn the basics of group policy, how it works and the difference between local GPOs and domain GPOs.</p>
+
+</div></div></div>
+
+<div class="gb-grid-column gb-grid-column-da9c7c50"><div class="gb-container gb-container-da9c7c50 .css-box-shadow"><div class="gb-inside-container">
+
+<h3 class="gb-headline gb-headline-0351080b"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></span><span class="gb-headline-text"><a href="https://activedirectorypro.com/group-policy-guide/#group-policy-process-order">Lesson 2 – Group Policy Process Order</a> </span></h3>
+
+
+
+<p class="has-text-align-left">Learn about the four levels of group policy processing (Local, Site, Domain, and OU). This is very important to understand. </p>
+
+</div></div></div>
+</div>
+
+<div class="gb-grid-wrapper gb-grid-wrapper-52043a2b">
+<div class="gb-grid-column gb-grid-column-b7dd8290"><div class="gb-container gb-container-b7dd8290 .content-box-testshadow "><div class="gb-inside-container">
+
+<h3 class="gb-headline gb-headline-ca1d7008"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg></span><span class="gb-headline-text"><a href="https://activedirectorypro.com/group-policy-guide/#managing-group-policies">Lesson 3 – Managing Group Policies</a></span></h3>
+
+
+
+<p class="has-text-align-left">In this lesson, I’ll walk through how to properly create a group policy object and an overview of the management console.</p>
+
+</div></div></div>
+
+<div class="gb-grid-column gb-grid-column-f005c67e"><div class="gb-container gb-container-f005c67e .content-box-testshadow "><div class="gb-inside-container">
+
+<h3 class="gb-headline gb-headline-8a1ec2a3"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M400 480H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48zm-204.686-98.059l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.248-16.379-6.249-22.628 0L184 302.745l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.25 16.379 6.25 22.628.001z"></path></svg></span><span class="gb-headline-text"><a href="https://activedirectorypro.com/group-policy-guide/#group-policy-preferences">Lesson 4 – Group Policy Preferences</a></span></h3>
+
+
+
+<p class="has-text-align-left">Group Policy Preferences allows you to deploy a default configuration with the option for users to alter the settings. </p>
+
+</div></div></div>
+</div>
+
+<div class="gb-grid-wrapper gb-grid-wrapper-75f1bf74">
+<div class="gb-grid-column gb-grid-column-e2f3ce5d"><div class="gb-container gb-container-e2f3ce5d .content-box-testshadow "><div class="gb-inside-container">
+
+<h3 class="gb-headline gb-headline-7cfc08e4"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"></path></svg></span><span class="gb-headline-text"><a href="https://activedirectorypro.com/group-policy-guide/#group-policy-filtering">Lesson 5 – Group Policy Filtering</a></span></h3>
+
+
+
+<p class="has-text-align-left">Learn how to filter group policy objects and exclude or include specific users and groups from a GPO. </p>
+
+</div></div></div>
+
+<div class="gb-grid-column gb-grid-column-b107cb05"><div class="gb-container gb-container-b107cb05 .content-box-testshadow "><div class="gb-inside-container">
+
+<h3 class="gb-headline gb-headline-048f4093"><span class="gb-icon"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M352 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm96-160v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg></span><span class="gb-headline-text"><a href="https://activedirectorypro.com/group-policy-guide/#troubleshooting-group-policy">Lesson 6 – Troubleshooting Group Policy</a></span></h3>
+
+
+
+<p class="has-text-align-left">Learn how to troubleshoot group policy and use various client commands to verify and check GPO policies. </p>
+
+</div></div></div>
+</div>
+</div></div>
+
+<div class="gb-container gb-container-0a4af58c .content-box-testshadow "><div class="gb-inside-container">
+
+<h2 class="wp-block-heading has-text-align-center has-base-3-color has-text-color" id="group-policy-basics" style="font-size:48px">Lesson 1<br>Group Policy Basics</h2>
+
+</div></div>
+
+<div class="gb-container gb-container-5a854675"><div class="gb-inside-container">
+
+<h3 class="gb-headline gb-headline-5f0d1fbe gb-headline-text">What is Group Policy?</h3>
+
+
+
+<p>Group policy is a Microsoft Windows feature that allows IT administrators to centrally manage and configure the settings on Windows computers. Group Policy can manage operating system settings, applications, browsers, and user settings. </p>
+
+
+
+<p>Group policy is used in Active Directory environments with domain-joined computers. It also works with Azure hybrid joined devices, but will not work with Azure-only devices. </p>
+
+
+
+<h3 class="gb-headline gb-headline-76356398 gb-headline-text">Group Policy Benefits</h3>
+
+
+
+<p>The main advantage of using group policy is that organizations can apply a set of standard policies across all computers and users. This helps to ensure security and compliance needs are met. It also benefits the IT department by having a tool to easily configure computer and user settings.  </p>
+
+
+
+<p><strong>Example Policies: </strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Password Policy</li>
+
+
+
+<li>Screen Lock</li>
+
+
+
+<li>Power Settings</li>
+
+
+
+<li>Map Network Drives</li>
+
+
+
+<li>Install printers, software, desktop shortcuts, etc.  </li>
+
+
+
+<li>Software restrictions (blocking access to programs)</li>
+</ul>
+
+
+
+<figure class="gb-block-image gb-block-image-bfa1d65a"><img data-perfmatters-preload="" decoding="async" width="804" height="404" class="gb-image gb-image-bfa1d65a" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-benefits.webp" alt="group policy diagram" title="gpo-benefits" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-benefits-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" fetchpriority="high"></figure>
+
+
+
+<h3 class="gb-headline gb-headline-2d8877e9 gb-headline-text">Group Policy Definitions</h3>
+
+
+
+<p>Here are some common group policy terms you need to be familiar with. </p>
+
+
+
+<p><strong>Group Policy Objects (GPOs)</strong> = A group policy object is a collection of policy settings. A GPO is applied to the domain, or an OU to target users, computers, or the entire domain. You will spend most of your time working with GPs. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-2bfa08fa"><img decoding="async" width="804" height="204" class="gb-image gb-image-2bfa08fa perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-objects.webp" alt="group policy objects" title="group-policy-objects" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-600x152.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-600x152.webp 600w"><noscript><img decoding="async" width="804" height="204" class="gb-image gb-image-2bfa08fa" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects.webp" alt="group policy objects" title="group-policy-objects" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-objects-600x152.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p><strong>Group Policy Management Console (GPMC)</strong> = This is the management console used to manage group policy and GPOs. This is installed on the Active Directory server but can also be added to other computers by <a href="https://activedirectorypro.com/install-rsat-remote-server-administration-tools-windows-10/" data-type="post" data-id="686">installing the RSAT tools</a>. </p>
+
+
+
+<p><strong>Local Group Policy </strong>=<strong> </strong>Local group policies are policies that apply to a single computer and are managed locally on a computer. You can access the local GPO with the gpedit.msc console. These policies apply to only the computer you edit them on. Domain policies take precedence over local policies. </p>
+
+
+
+<p><strong>Domain Group Policy</strong> (DGP) = Domain group policies are managed centrally and can be applied to multiple computers and users. DGPs will be the focus of this guide. </p>
+
+
+
+<p><strong>User Configuration Policies</strong> = Each GPO has a user configuration and computer configuration section. The User configuration policies only apply to users. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-93cfd068"><img decoding="async" width="804" height="204" class="gb-image gb-image-93cfd068 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-user-configuration.webp" alt="group policy user configuration" title="gpo-user-configuration" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-600x152.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-600x152.webp 600w"><noscript><img decoding="async" width="804" height="204" class="gb-image gb-image-93cfd068" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration.webp" alt="group policy user configuration" title="gpo-user-configuration" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-configuration-600x152.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p><strong>Computer Configuration Policies</strong> = The GPO computer configuration policies apply to the computer, not the user. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-3d224309"><img decoding="async" width="804" height="204" class="gb-image gb-image-3d224309 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-computer-configuration.webp" alt="group policy computer configuration" title="gpo-computer-configuration" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-600x152.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-600x152.webp 600w"><noscript><img decoding="async" width="804" height="204" class="gb-image gb-image-3d224309" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration.webp" alt="group policy computer configuration" title="gpo-computer-configuration" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-computer-configuration-600x152.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p></p>
+
+
+
+<h3 class="gb-headline gb-headline-17825432 gb-headline-text">How Does Group Policy Work?</h3>
+
+
+
+<p>Group policy works by an Administrator creating a policy that applies to users or computers. The computer or user downloads the policy and applies its settings to the computer. </p>
+
+
+
+<p>Below is a typical use case for using group policy and how group policy works. You are an administrator and you need to ensure all computer screens lock after 15 minutes of inactivity. </p>
+
+
+
+<ol class="wp-block-list">
+<li>The administrator uses the Group Policy Management Console to create a new GPO. The GPO has policies to lock the computer screen after 15 minutes of use. </li>
+
+
+
+<li>The administrator applies the new GPO to the entire domain. This means all computers in the domain will get the policy.  </li>
+
+
+
+<li>The computer checks and applies new GPOs on startup and when users log on. Computers also check for new GPOs every 90 minutes. </li>
+
+
+
+<li>The GPO policy is downloaded and applied to the computer or user. </li>
+</ol>
+
+
+
+<figure class="gb-block-image gb-block-image-a23dba24"><img decoding="async" width="804" height="504" class="gb-image gb-image-a23dba24 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/how-group-policy-works-1.webp" alt="how group policy works " title="how-group-policy-works-1" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-300x188.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-768x481.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-600x376.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-300x188.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-768x481.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-600x376.webp 600w"><noscript><img decoding="async" width="804" height="504" class="gb-image gb-image-a23dba24" src="https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1.webp" alt="how group policy works " title="how-group-policy-works-1" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-300x188.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-768x481.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/how-group-policy-works-1-600x376.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>If you want to follow along with this guide you might want to build a test environment. This will allow you to create, modify and delete GPOs without breaking your production environment. Refer to my article on <a href="https://activedirectorypro.com/create-active-directory-test-environment/" data-type="post" data-id="31577">building an Active Directory test environment</a> for step-by-step instructions.</p>
+
+
+
+<p></p>
+
+</div></div>
+
+<div class="gb-container gb-container-39fdd865 .content-box-testshadow "><div class="gb-inside-container">
+
+<h2 class="wp-block-heading has-text-align-center has-base-3-color has-text-color" id="group-policy-process-order" style="font-size:48px">Lesson 2<br>Group Policy Process Order<br></h2>
+
+</div></div>
+
+<div class="gb-container gb-container-1de41fb0"><div class="gb-inside-container">
+
+<p>It is very important to understand the order in which group policies are applied. It is even more important to understand the order of precedence. This will be critical in group policy design and troubleshooting.</p>
+
+
+
+<h3 class="gb-headline gb-headline-65e89556 gb-headline-text">GPO Processing Order </h3>
+
+
+
+<p>GPOs are processed in the following order: </p>
+
+
+
+<ol class="wp-block-list">
+<li>Local Group Policy Object</li>
+
+
+
+<li>GPO linked to Site</li>
+
+
+
+<li>GPO linked to the domain</li>
+
+
+
+<li>GPO linked to an Organizational Unit</li>
+</ol>
+
+
+
+<h3 class="gb-headline gb-headline-6795f2b2 gb-headline-text">Group Policy Order of Precedence</h3>
+
+
+
+<p>The GPO that applies last has the most precedence. What this means is if two policies have the same settings, the GPO with the most precedence will be applied. This is because it is applied last and will overwrite the other policy settings. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-52d27af7"><img decoding="async" width="804" height="390" class="gb-image gb-image-52d27af7 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-order-of-precedence.webp" alt="group policy process order" title="group-policy-order-of-precedence" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-300x146.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-768x373.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-600x291.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-300x146.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-768x373.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-600x291.webp 600w"><noscript><img decoding="async" width="804" height="390" class="gb-image gb-image-52d27af7" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence.webp" alt="group policy process order" title="group-policy-order-of-precedence" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-300x146.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-768x373.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-order-of-precedence-600x291.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Let me walk through an example to better illustrate what this means. </p>
+
+
+
+<p>I have two GPOs, the name and policy settings are below. </p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>User – Chrome Settings </strong>= This GPO sets the home page to google.com. This GPO is applied to the Domain. </li>
+
+
+
+<li><strong>User – Chrome Settings 2</strong> = This GPO sets the home page to bing.com. This GPO is applied to an OU. </li>
+</ol>
+
+
+
+<p>Screenshot example below. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-c877d088"><img decoding="async" width="804" height="404" class="gb-image gb-image-c877d088 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-order-example.webp" alt="gpo process order example" title="gpo-order-example" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-c877d088" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example.webp" alt="gpo process order example" title="gpo-order-example" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-order-example-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Can you guess which home page will be applied? </p>
+
+
+
+<p>It will be bing.com.</p>
+
+
+
+<p>The “User – Chrome Settings 2” GPO has the most precedence because it was applied last.</p>
+
+
+
+<p>So remember, for any GPOs that have conflicting policy settings, the GPO with the most precedence will win. </p>
+
+
+
+<p>Domain group policy objects will always overwrite any local policies because they have more precedence. </p>
+
+</div></div>
+
+
+<p></p>
+
+
+<div class="gb-container gb-container-a53e987c .content-box-testshadow "><div class="gb-inside-container">
+
+<h2 class="wp-block-heading has-text-align-center has-base-3-color has-text-color" id="managing-group-policies" style="font-size:48px">Lesson 3<br>Managing Group Policies<br></h2>
+
+</div></div>
+
+<div class="gb-container gb-container-64acafa1"><div class="gb-inside-container">
+
+<p>In this lesson, you will learn how to create group policies. I’ll demonstrate how to create a GPO that applies to users and a separate GPO that applies to computers. </p>
+
+
+
+<h3 class="gb-headline gb-headline-b9030c93 gb-headline-text">Group Policy Management Console Overview</h3>
+
+
+
+<p>When managing group policy you will utilize the built-in group policy management console (GPMC). The GPMC is located in the <strong>start menu -&gt; Windows Administrative Tools</strong>. </p>
+
+
+
+<p>I’ll go over the basics of the GPMC. (Refer to the picture below). </p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>Domains</strong> = This will list your domains and OU structure. Notice it does not list any Active Directory containers, that is because GPOs can only be linked to the domain and OUs. </li>
+
+
+
+<li><strong>Linked GPOs</strong> = If any OU has a linked GPO it will be listed under the OU. For example, you can see my “ADPRO Computers” ou has a PsExec Allow policy linked. </li>
+
+
+
+<li><strong>Group Policy Objects</strong> = This section will list all GPOs, linked and unlinked. </li>
+</ol>
+
+
+
+<figure class="gb-block-image gb-block-image-a5aaa243"><img decoding="async" width="344" height="524" class="gb-image gb-image-a5aaa243 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpmc-overview.webp" alt="gpmc" title="gpmc-overview" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview.webp 344w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview-197x300.webp 197w" data-sizes="(max-width: 344px) 100vw, 344px" data-ll-status="loaded" sizes="(max-width: 344px) 100vw, 344px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview.webp 344w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview-197x300.webp 197w"><noscript><img decoding="async" width="344" height="524" class="gb-image gb-image-a5aaa243" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview.webp" alt="gpmc" title="gpmc-overview" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview.webp 344w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpmc-overview-197x300.webp 197w" sizes="(max-width: 344px) 100vw, 344px" /></noscript></figure>
+
+
+
+<p>Don’t worry about “WMI Filters” or “Starter GPOs”.</p>
+
+
+
+<p>When you select a GPO you will get the GPO details on the right side of the screen. </p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Scope</strong> = The scope shows you all the locations the GPO is located in. Below is the Security filtering (covered in section 5)</li>
+
+
+
+<li><strong>Details</strong> = Shows basic details on the GPO like when it was created and last modified. </li>
+
+
+
+<li><strong>Settings</strong> = Displays what policies are configured for the GPO</li>
+
+
+
+<li><strong>Delegation</strong> = Lists the permissions of the GPO. You typically do not need to modify these settings. </li>
+</ul>
+
+
+
+<figure class="gb-block-image gb-block-image-b5a63fce"><img decoding="async" width="804" height="404" class="gb-image gb-image-b5a63fce perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-details.webp" alt="gpmc scope settings" title="gpo-details" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-b5a63fce" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details.webp" alt="gpmc scope settings" title="gpo-details" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-details-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>That really covers the most common settings you need to manage group policy. Next, I’ll walk through creating a new GPO. </p>
+
+
+
+<h3 class="wp-block-heading has-text-align-center" style="font-size:32px">New GPO Example 1: Block Access to the Control Panel for All Users</h3>
+
+
+
+<p>In this first example, you will create a new GPO to block access to the control panel for all users. </p>
+
+
+
+<p>First, open the group policy management console.</p>
+
+
+
+<figure class="gb-block-image gb-block-image-e1237d31"><img decoding="async" width="326" height="604" class="gb-image gb-image-e1237d31 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-management-console.webp" alt="open group policy management console" title="gpo-management-console" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console.webp 326w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console-162x300.webp 162w" data-sizes="(max-width: 326px) 100vw, 326px" data-ll-status="loaded" sizes="(max-width: 326px) 100vw, 326px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console.webp 326w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console-162x300.webp 162w"><noscript><img decoding="async" width="326" height="604" class="gb-image gb-image-e1237d31" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console.webp" alt="open group policy management console" title="gpo-management-console" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console.webp 326w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-management-console-162x300.webp 162w" sizes="(max-width: 326px) 100vw, 326px" /></noscript></figure>
+
+
+
+<p>Find the organizational unit that contains your user accounts, for me, this is my “ADPRO Users” OU. </p>
+
+
+
+<p>Right-click the OU and select “<strong>Create a GPO in this domain, and Link it here</strong>“</p>
+
+
+
+<figure class="gb-block-image gb-block-image-5e6836e0"><img decoding="async" width="664" height="507" class="gb-image gb-image-5e6836e0 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/create-new-user-gpo.webp" alt="create a new gpo" title="create-new-user-gpo" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo.webp 664w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo-300x229.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo-600x458.webp 600w" data-sizes="(max-width: 664px) 100vw, 664px" data-ll-status="loaded" sizes="(max-width: 664px) 100vw, 664px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo.webp 664w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo-300x229.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo-600x458.webp 600w"><noscript><img decoding="async" width="664" height="507" class="gb-image gb-image-5e6836e0" src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo.webp" alt="create a new gpo" title="create-new-user-gpo" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo.webp 664w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo-300x229.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-new-user-gpo-600x458.webp 600w" sizes="(max-width: 664px) 100vw, 664px" /></noscript></figure>
+
+
+
+<p>Give the new GPO a name. For example, User – Block Control Panel. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-d255a023"><img decoding="async" width="432" height="210" class="gb-image gb-image-d255a023 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/name-new-gpo.webp" alt="name gpo" title="name-new-gpo" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo.webp 432w, https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo-300x146.webp 300w" data-sizes="(max-width: 432px) 100vw, 432px" data-ll-status="loaded" sizes="(max-width: 432px) 100vw, 432px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo.webp 432w, https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo-300x146.webp 300w"><noscript><img decoding="async" width="432" height="210" class="gb-image gb-image-d255a023" src="https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo.webp" alt="name gpo" title="name-new-gpo" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo.webp 432w, https://activedirectorypro.com/wp-content/uploads/2022/09/name-new-gpo-300x146.webp 300w" sizes="(max-width: 432px) 100vw, 432px" /></noscript></figure>
+
+
+
+<p>At this point, there is a new GPO linked to all the users but the GPO has no policies set. Right-click on the GPO and select edit. </p>
+
+
+
+<p>Browse to <strong>User Configuration -&gt; Policies -&gt; Administrative Templates -&gt; Control Panel</strong></p>
+
+
+
+<figure class="gb-block-image gb-block-image-915265db"><img decoding="async" width="840" height="337" class="gb-image gb-image-915265db perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-user-policy-admin-control-panel.webp" alt="gpo block access to control panel" title="gpo-user-policy-admin-control-panel" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel.webp 840w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-300x120.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-768x308.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-600x241.webp 600w" data-sizes="(max-width: 840px) 100vw, 840px" data-ll-status="loaded" sizes="(max-width: 840px) 100vw, 840px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel.webp 840w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-300x120.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-768x308.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-600x241.webp 600w"><noscript><img decoding="async" width="840" height="337" class="gb-image gb-image-915265db" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel.webp" alt="gpo block access to control panel" title="gpo-user-policy-admin-control-panel" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel.webp 840w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-300x120.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-768x308.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-user-policy-admin-control-panel-600x241.webp 600w" sizes="(max-width: 840px) 100vw, 840px" /></noscript></figure>
+
+
+
+<p>Right-click the policy and select “Edit”. </p>
+
+
+
+<p>Change the policy setting to “Enabled” and click “OK”. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-6420d68e"><img decoding="async" width="804" height="404" class="gb-image gb-image-6420d68e perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/enabl-gpo-control-panel-setting.webp" alt="enable the gpo setting" title="enabl-gpo-control-panel-setting" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-6420d68e" src="https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting.webp" alt="enable the gpo setting" title="enabl-gpo-control-panel-setting" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/enabl-gpo-control-panel-setting-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>To verify the GPO is working, reboot a computer and log in with a domain user account. </p>
+
+
+
+<p>When you try to open the control panel you should get a pop up message like the one below. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-2427d534"><img decoding="async" width="804" height="404" class="gb-image gb-image-2427d534 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/control-panel-blocked-message.webp" alt="control panel restrictions block message" title="control-panel-blocked-message" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-2427d534" src="https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message.webp" alt="control panel restrictions block message" title="control-panel-blocked-message" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/control-panel-blocked-message-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Remember this was a user configuration and only applies when a user logs into the computer. In the next example, I’ll go over a computer GPO. </p>
+
+
+
+<h3 class="gb-headline gb-headline-4899c417 gb-headline-text">New GPO Example 2: Create a Logon Banner (Legal Notice) </h3>
+
+
+
+<p>In this example, you will create a new GPO that presents a banner message to users before logging into a computer. Many organizations require this for legal purposes. This will be a computer configuration GPO. </p>
+
+
+
+<p>First, determine the OU that contains the computers you want the policy applied to. In my domain, all computers are located in the “ADPRO Computers” OU, all sub-OUs will inherit this policy. </p>
+
+
+
+<p>Right-click the OU and select <strong>Create a GPO in this domain, and link it here</strong>.</p>
+
+
+
+<figure class="gb-block-image gb-block-image-d4cb5f9f"><img decoding="async" width="804" height="404" class="gb-image gb-image-d4cb5f9f perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/new-gpo-example2.webp" alt="create a computer gpo" title="new-gpo-example2" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-d4cb5f9f" src="https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2.webp" alt="create a computer gpo" title="new-gpo-example2" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/new-gpo-example2-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Give the new GPO a name, for example Computer – Logon Banner. </p>
+
+
+
+<p>Browse to <strong>Computer Configuration -&gt; Policies -&gt; Windows Settings -&gt; Security Settings -&gt; Local Policies – &gt; Security Options. </strong></p>
+
+
+
+<p>On the right open the policy “Interactive logon: Message title for users attempting to log on”.</p>
+
+
+
+<figure class="gb-block-image gb-block-image-f129f5eb"><img decoding="async" width="936" height="430" class="gb-image gb-image-f129f5eb perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-interactive-logon-message.webp" alt="interactive logon title gpo" title="gpo-interactive-logon-message" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message.webp 936w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-300x138.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-768x353.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-600x276.webp 600w" data-sizes="(max-width: 936px) 100vw, 936px" data-ll-status="loaded" sizes="(max-width: 936px) 100vw, 936px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message.webp 936w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-300x138.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-768x353.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-600x276.webp 600w"><noscript><img decoding="async" width="936" height="430" class="gb-image gb-image-f129f5eb" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message.webp" alt="interactive logon title gpo" title="gpo-interactive-logon-message" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message.webp 936w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-300x138.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-768x353.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-interactive-logon-message-600x276.webp 600w" sizes="(max-width: 936px) 100vw, 936px" /></noscript></figure>
+
+
+
+<p>Now select “<strong>Define this policy setting” and enter your message</strong>. This message is often provided by HR or your legal department. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-4c4ddc64"><img decoding="async" width="421" height="515" class="gb-image gb-image-4c4ddc64 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-enter-logon-message-2.webp" alt="define the gpo policy" title="gpo-enter-logon-message-2" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2.webp 421w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2-245x300.webp 245w" data-sizes="(max-width: 421px) 100vw, 421px" data-ll-status="loaded" sizes="(max-width: 421px) 100vw, 421px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2.webp 421w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2-245x300.webp 245w"><noscript><img decoding="async" width="421" height="515" class="gb-image gb-image-4c4ddc64" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2.webp" alt="define the gpo policy" title="gpo-enter-logon-message-2" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2.webp 421w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-enter-logon-message-2-245x300.webp 245w" sizes="(max-width: 421px) 100vw, 421px" /></noscript></figure>
+
+
+
+<p>Next, open the policy “<strong>Interactive logon: Message title for users attempting to log on</strong>” and enter a title for the banner. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-1f317173"><img decoding="async" width="421" height="509" class="gb-image gb-image-1f317173 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-logon-message-title.webp" alt="enter message title for gpo" title="gpo-logon-message-title" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title.webp 421w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title-248x300.webp 248w" data-sizes="(max-width: 421px) 100vw, 421px" data-ll-status="loaded" sizes="(max-width: 421px) 100vw, 421px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title.webp 421w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title-248x300.webp 248w"><noscript><img decoding="async" width="421" height="509" class="gb-image gb-image-1f317173" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title.webp" alt="enter message title for gpo" title="gpo-logon-message-title" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title.webp 421w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-logon-message-title-248x300.webp 248w" sizes="(max-width: 421px) 100vw, 421px" /></noscript></figure>
+
+
+
+<p>Next, reboot a computer, and when you logon you should be prompted with the GPO logon banner message. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-2def7c3c"><img decoding="async" width="804" height="404" class="gb-image gb-image-2def7c3c perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/test-gpo-logon-banner.webp" alt="windows 10 logon banner example" title="test-gpo-logon-banner" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-2def7c3c" src="https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner.webp" alt="windows 10 logon banner example" title="test-gpo-logon-banner" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/test-gpo-logon-banner-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Nice Work!</p>
+
+
+
+<p>If you followed this lesson then you just created two GPOs, one for users and one for computers.</p>
+
+
+
+<p>Pretty easy right? </p>
+
+
+
+<p><strong>How do you know where a GPO is linked?</strong> </p>
+
+
+
+<p>Open GPMC, to go Group Policy objects, select the GPO and look at the scope settings. This will tell you where in the domain the GPO is linked to (what objects it applies to). </p>
+
+
+
+<p>In the screenshot below, you can see the Logon Banner GPO is linked to my ADPRO Computers OU. So this GPO will apply to all devices in this OU and any sub-OU. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-f2953120"><img decoding="async" width="725" height="393" class="gb-image gb-image-f2953120 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/where-gpo-linked.webp" alt="determine where a gpo is linked" title="where-gpo-linked" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked.webp 725w, https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked-300x163.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked-600x325.webp 600w" data-sizes="(max-width: 725px) 100vw, 725px" data-ll-status="loaded" sizes="(max-width: 725px) 100vw, 725px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked.webp 725w, https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked-300x163.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked-600x325.webp 600w"><noscript><img decoding="async" width="725" height="393" class="gb-image gb-image-f2953120" src="https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked.webp" alt="determine where a gpo is linked" title="where-gpo-linked" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked.webp 725w, https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked-300x163.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/where-gpo-linked-600x325.webp 600w" sizes="(max-width: 725px) 100vw, 725px" /></noscript></figure>
+
+
+
+<p>For more group policy examples refer to the article <a href="https://activedirectorypro.com/group-policy-examples-most-useful-gpos-for-security/">Most Useful GPO Examples for Security</a>. This article lists 23 GPO examples that help to improve security in any network. </p>
+
+</div></div>
+
+<div class="gb-container gb-container-f388c673 .content-box-testshadow "><div class="gb-inside-container">
+
+<h2 class="wp-block-heading has-text-align-center has-base-3-color has-text-color" id="group-policy-preferences" style="font-size:48px">Lesson 4<br>Group Policy Preferences <br></h2>
+
+</div></div>
+
+<div class="gb-container gb-container-4e4720cc"><div class="gb-inside-container">
+
+<p>Group policy preferences are used to set an initial configuration but allows users to change them. For example, a GPO preference can create a shortcut on the user’s desktop but allow the user to delete it. </p>
+
+
+
+<p>GPO preferences differ from policy settings because users cannot modify the policy settings. For example, in lesson 4 we created a logon banner, this was a policy setting and the users can not change it. </p>
+
+
+
+<p><strong>GPO Preferences are primarily used for: </strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Mapping Network Drives</li>
+
+
+
+<li>Installing Printers</li>
+
+
+
+<li>Installing Software</li>
+
+
+
+<li>Add desktop shortcuts</li>
+
+
+
+<li>Modify registry settings</li>
+</ul>
+
+
+
+<h3 class="gb-headline gb-headline-8eb661be gb-headline-text">Item-Level Targeting</h3>
+
+
+
+<p>GPO preferences include a filtering option called “Item-level targeting”. Item-level targeting gives you granular control over what objects  (which users or computers) the GPO is applied to. </p>
+
+
+
+<p><strong>Some examples of item-level targeting:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Target computers with a specific operating system</li>
+
+
+
+<li>Target a security group</li>
+
+
+
+<li>Target computers by IP address</li>
+
+
+
+<li>RAM, CPU Speed. </li>
+</ul>
+
+
+
+<p>Here is a screenshot of all the items. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-d3a6cb3c"><img decoding="async" width="636" height="608" class="gb-image gb-image-d3a6cb3c perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/item-level-targeting-list.webp" alt="gpo item level targeting list" title="item-level-targeting-list" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list.webp 636w, https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list-300x287.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list-600x574.webp 600w" data-sizes="(max-width: 636px) 100vw, 636px" data-ll-status="loaded" sizes="(max-width: 636px) 100vw, 636px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list.webp 636w, https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list-300x287.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list-600x574.webp 600w"><noscript><img decoding="async" width="636" height="608" class="gb-image gb-image-d3a6cb3c" src="https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list.webp" alt="gpo item level targeting list" title="item-level-targeting-list" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list.webp 636w, https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list-300x287.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/item-level-targeting-list-600x574.webp 600w" sizes="(max-width: 636px) 100vw, 636px" /></noscript></figure>
+
+
+
+<h3 class="gb-headline gb-headline-57658099 gb-headline-text">Create a GPO Using Preferences and Item-level Targeting</h3>
+
+
+
+<p>In this example, we will create a new GPO using preferences that will add a desktop shortcut. We will also use item-level targeting to apply the GPO to a security group only. </p>
+
+
+
+<p>First, create a new GPO and link it to your user’s OU. </p>
+
+
+
+<p>Edit the GPO and browse to <strong>User Configuration -&gt; Preferences -&gt; Windows Settings</strong></p>
+
+
+
+<figure class="gb-block-image gb-block-image-efe48864"><img decoding="async" width="341" height="328" class="gb-image gb-image-efe48864 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/create-gpo-preference-1.webp" alt="create a gpo preference" title="create-gpo-preference-1" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1.webp 341w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1-300x289.webp 300w" data-sizes="(max-width: 341px) 100vw, 341px" data-ll-status="loaded" sizes="(max-width: 341px) 100vw, 341px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1.webp 341w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1-300x289.webp 300w"><noscript><img decoding="async" width="341" height="328" class="gb-image gb-image-efe48864" src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1.webp" alt="create a gpo preference" title="create-gpo-preference-1" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1.webp 341w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-1-300x289.webp 300w" sizes="(max-width: 341px) 100vw, 341px" /></noscript></figure>
+
+
+
+<p>Right-click on Shortcuts, select New, and then shortcut. </p>
+
+
+
+<p>See the screenshot below for shortcut settings. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-5fc55918"><img decoding="async" width="401" height="455" class="gb-image gb-image-5fc55918 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/create-gpo-preference-2.webp" alt="create a gpo shortcut" title="create-gpo-preference-2" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2.webp 401w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2-264x300.webp 264w" data-sizes="(max-width: 401px) 100vw, 401px" data-ll-status="loaded" sizes="(max-width: 401px) 100vw, 401px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2.webp 401w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2-264x300.webp 264w"><noscript><img decoding="async" width="401" height="455" class="gb-image gb-image-5fc55918" src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2.webp" alt="create a gpo shortcut" title="create-gpo-preference-2" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2.webp 401w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-2-264x300.webp 264w" sizes="(max-width: 401px) 100vw, 401px" /></noscript></figure>
+
+
+
+<p>I linked this GPO to all users, if a user logged in they will see a shortcut on the desktop. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-1b322d84"><img decoding="async" width="331" height="162" class="gb-image gb-image-1b322d84 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/create-gpo-preference-3.webp" alt="example icon on desktop" title="create-gpo-preference-3" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3.webp 331w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3-300x147.webp 300w" data-sizes="(max-width: 331px) 100vw, 331px" data-ll-status="loaded" sizes="(max-width: 331px) 100vw, 331px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3.webp 331w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3-300x147.webp 300w"><noscript><img decoding="async" width="331" height="162" class="gb-image gb-image-1b322d84" src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3.webp" alt="example icon on desktop" title="create-gpo-preference-3" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3.webp 331w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-3-300x147.webp 300w" sizes="(max-width: 331px) 100vw, 331px" /></noscript></figure>
+
+
+
+<p><strong>But what if you don’t want the shortcut on all user’s desktops?</strong> </p>
+
+
+
+<p>With GPO preferences you can use item-level targeting to limit which users the GPO is applied to. </p>
+
+
+
+<p>For this example, I’m going to limit the desktop shortcut to a security group. </p>
+
+
+
+<p>I created a group called “gpo_desktop_shortcut” and added a few users from various departments. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-21b0309d"><img decoding="async" width="397" height="472" class="gb-image gb-image-21b0309d perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/create-gpo-preference-4.webp" alt="ad security group" title="create-gpo-preference-4" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4.webp 397w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4-252x300.webp 252w" data-sizes="(max-width: 397px) 100vw, 397px" data-ll-status="loaded" sizes="(max-width: 397px) 100vw, 397px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4.webp 397w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4-252x300.webp 252w"><noscript><img decoding="async" width="397" height="472" class="gb-image gb-image-21b0309d" src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4.webp" alt="ad security group" title="create-gpo-preference-4" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4.webp 397w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-4-252x300.webp 252w" sizes="(max-width: 397px) 100vw, 397px" /></noscript></figure>
+
+
+
+<p>Go back to the GPO settings and click on “Common”. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-128e56c1"><img decoding="async" width="402" height="458" class="gb-image gb-image-128e56c1 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/create-gpo-preference-5.webp" alt="gpo item level targeting common" title="create-gpo-preference-5" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5.webp 402w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5-263x300.webp 263w" data-sizes="(max-width: 402px) 100vw, 402px" data-ll-status="loaded" sizes="(max-width: 402px) 100vw, 402px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5.webp 402w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5-263x300.webp 263w"><noscript><img decoding="async" width="402" height="458" class="gb-image gb-image-128e56c1" src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5.webp" alt="gpo item level targeting common" title="create-gpo-preference-5" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5.webp 402w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-5-263x300.webp 263w" sizes="(max-width: 402px) 100vw, 402px" /></noscript></figure>
+
+
+
+<p>Next, select “Item-level targeting” and click the “Targeting” button. </p>
+
+
+
+<p>Click on “New Item” from the drop-down menu select “security group”. </p>
+
+
+
+<p>Select the group you want to target and click ok. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-60ed1b6a"><img decoding="async" width="598" height="420" class="gb-image gb-image-60ed1b6a perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/create-gpo-preference-6.webp" alt="gpo item level targeting group" title="create-gpo-preference-6" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6.webp 598w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6-300x211.webp 300w" data-sizes="(max-width: 598px) 100vw, 598px" data-ll-status="loaded" sizes="(max-width: 598px) 100vw, 598px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6.webp 598w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6-300x211.webp 300w"><noscript><img decoding="async" width="598" height="420" class="gb-image gb-image-60ed1b6a" src="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6.webp" alt="gpo item level targeting group" title="create-gpo-preference-6" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6.webp 598w, https://activedirectorypro.com/wp-content/uploads/2022/09/create-gpo-preference-6-300x211.webp 300w" sizes="(max-width: 598px) 100vw, 598px" /></noscript></figure>
+
+
+
+<p>That is it!</p>
+
+
+
+<p>Now the GPO will only apply to the users in the security group. </p>
+
+
+
+<p>Remember item level targeting only works with GPO preferences. To filter other GPOs you can use security filtering which I’ll cover in the next lesson. </p>
+
+</div></div>
+
+<div class="gb-container gb-container-822d9666 .content-box-testshadow "><div class="gb-inside-container">
+
+<h2 class="wp-block-heading has-text-align-center has-base-3-color has-text-color" id="group-policy-filtering" style="font-size:48px">Lesson 5<br>Group Policy Filtering<br></h2>
+
+</div></div>
+
+<div class="gb-container gb-container-fead5807"><div class="gb-inside-container">
+
+<p>Group policy security filtering is something that doesn’t get enough attention. </p>
+
+
+
+<p>Group policy security filtering lets you control what users and computers a GPO is applied to. For example, if you don’t want certain computers to have a <a href="https://activedirectorypro.com/group-policy-lock-screen/" data-type="post" data-id="20523">screen lock policy</a> you can use security filtering.  </p>
+
+
+
+<p>Each GPO has a security filtering section and by default, all authenticated users have the right to apply the GPO. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-b8d7d449"><img decoding="async" width="804" height="204" class="gb-image gb-image-b8d7d449 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-filtering-1a.webp" alt="gpo security filtering" title="gpo-filtering-1a" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-600x152.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-600x152.webp 600w"><noscript><img decoding="async" width="804" height="204" class="gb-image gb-image-b8d7d449" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a.webp" alt="gpo security filtering" title="gpo-filtering-1a" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-1a-600x152.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<h3 class="gb-headline gb-headline-18cbdd37 gb-headline-text">How to Exclude Users From a GPO Using Security Filtering</h3>
+
+
+
+<p>In this example, I’m going to use security filtering to exclude users from a GPO. I’ll use the control panel policy I created from a previous lesson. </p>
+
+
+
+<p>I have the “User – Block Control Panel” policy that is applied to all domain users. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-365783b8"><img decoding="async" width="804" height="204" class="gb-image gb-image-365783b8 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-filtering-2.webp" alt="exclude users from gpo" title="gpo-filtering-2" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-600x152.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-600x152.webp 600w"><noscript><img decoding="async" width="804" height="204" class="gb-image gb-image-365783b8" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2.webp" alt="exclude users from gpo" title="gpo-filtering-2" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-300x76.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-768x195.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-2-600x152.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Some users called the helpdesk and are very upset they can’t access the power options from the control panel. </p>
+
+
+
+<p>The boss approved the access so I need a way to exclude these users from the policy. </p>
+
+
+
+<p>No problem. </p>
+
+
+
+<p>I’ll create a security group, add the approved users and use security filtering to deny the group access to the GPO. </p>
+
+
+
+<p>In the GPO click on the Delegation tab.</p>
+
+
+
+<figure class="gb-block-image gb-block-image-9905278b"><img decoding="async" width="804" height="404" class="gb-image gb-image-9905278b perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-filtering-3a.webp" alt="gpo delegation tab" title="gpo-filtering-3a" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-9905278b" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a.webp" alt="gpo delegation tab" title="gpo-filtering-3a" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-3a-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Click the Advanced button in the lower right corner. </p>
+
+
+
+<p>Click Add and add the security group. </p>
+
+
+
+<p>For the permissions Select “Deny” for “apply group policy”. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-e4980610"><img decoding="async" width="368" height="455" class="gb-image gb-image-e4980610 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-filtering-4.webp" alt="gpo apply group policy permissions" title="gpo-filtering-4" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4.webp 368w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4-243x300.webp 243w" data-sizes="(max-width: 368px) 100vw, 368px" data-ll-status="loaded" sizes="(max-width: 368px) 100vw, 368px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4.webp 368w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4-243x300.webp 243w"><noscript><img decoding="async" width="368" height="455" class="gb-image gb-image-e4980610" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4.webp" alt="gpo apply group policy permissions" title="gpo-filtering-4" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4.webp 368w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-4-243x300.webp 243w" sizes="(max-width: 368px) 100vw, 368px" /></noscript></figure>
+
+
+
+<p>All done. </p>
+
+
+
+<p>Now any member of this group will be denied the GPO. In this example, the user will be denied the group policy that blocks access to the control panel which enables the user to access it. </p>
+
+
+
+<h3 class="gb-headline gb-headline-987a7b93 gb-headline-text">How to Apply a GPO to Specific Users or Computers with Security Filtering</h3>
+
+
+
+<p>In this example, I’ll use security filtering to apply a GPO to a specific group of users. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-351bb876"><img decoding="async" width="804" height="404" class="gb-image gb-image-351bb876 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-filter-example-1.webp" alt="gpo apply to specific user or computer" title="gpo-filter-example-1" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-351bb876" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1.webp" alt="gpo apply to specific user or computer" title="gpo-filter-example-1" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filter-example-1-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>First, create a security group for the users or computers you want the GPO applied to. </p>
+
+
+
+<p>Go to the GPO and then Security Filtering. </p>
+
+
+
+<p>Click the “Add” button and select your group. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-bed194fd"><img decoding="async" width="804" height="404" class="gb-image gb-image-bed194fd perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-filtering-5.webp" alt="add group to security filter" title="gpo-filtering-5" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-bed194fd" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5.webp" alt="add group to security filter" title="gpo-filtering-5" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-5-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>Next, click on the delegation tab at the top of the GPO. </p>
+
+
+
+<p>Click the “Advanced” button in the lower right. </p>
+
+
+
+<p>For “Authenticated Users” uncheck “Apply group policy”. But make sure “read” is still checked. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-ef4ad206"><img decoding="async" width="361" height="452" class="gb-image gb-image-ef4ad206 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/gpo-filtering-6.webp" alt="remove apply group policy permissions" title="gpo-filtering-6" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6.webp 361w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6-240x300.webp 240w" data-sizes="(max-width: 361px) 100vw, 361px" data-ll-status="loaded" sizes="(max-width: 361px) 100vw, 361px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6.webp 361w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6-240x300.webp 240w"><noscript><img decoding="async" width="361" height="452" class="gb-image gb-image-ef4ad206" src="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6.webp" alt="remove apply group policy permissions" title="gpo-filtering-6" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6.webp 361w, https://activedirectorypro.com/wp-content/uploads/2022/09/gpo-filtering-6-240x300.webp 240w" sizes="(max-width: 361px) 100vw, 361px" /></noscript></figure>
+
+
+
+<p>Done. </p>
+
+
+
+<p>Now the GPO will only be applied to the added security group. </p>
+
+
+
+<p>That completes lesson 5. In the last lesson, I’ll show you how to troubleshoot group policy. </p>
+
+</div></div>
+
+
+<p></p>
+
+
+<div class="gb-container gb-container-270a0695 .content-box-testshadow "><div class="gb-inside-container">
+
+<h2 class="wp-block-heading has-text-align-center has-base-3-color has-text-color" id="troubleshooting-group-policy" style="font-size:48px">Lesson 6<br>Troubleshooting Group Policy<br></h2>
+
+</div></div>
+
+<div class="gb-container gb-container-c2018655"><div class="gb-inside-container">
+
+<p>In this lesson, you will learn how to troubleshoot group policy. </p>
+
+
+
+<p>First, here are some quick tips that often lead to group policy issues. </p>
+
+
+
+<ul class="wp-block-list">
+<li>Stuffing too many settings into one big GPO</li>
+
+
+
+<li>Using block inheritance</li>
+
+
+
+<li>Using loopback processing</li>
+
+
+
+<li>Changing delegation permissions</li>
+
+
+
+<li>Poor OU design.</li>
+</ul>
+
+
+
+<p>Don’t make group policy complicated, keep it simple and you can avoid most GPO issues. For more tips refer to my <a href="https://activedirectorypro.com/group-policy-best-practices/" data-type="post" data-id="263">GPO best practices guide</a>. </p>
+
+
+
+<h3 class="gb-headline gb-headline-a18c0539 gb-headline-text">Group Policy Troubleshooting Steps</h3>
+
+
+
+<p><strong>1. Run gpupdate command</strong></p>
+
+
+
+<p>On a computer that has GPO issues, log in and run the gpupdate /force command. The /force command reapplies all policy settings. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-0f159cb1"><img decoding="async" width="800" height="200" class="gb-image gb-image-0f159cb1 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-troubleshooting-1.webp" alt="gpo troubleshooting gpupdate" title="group-policy-troubleshooting-1" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-300x75.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-768x192.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-600x150.webp 600w" data-sizes="(max-width: 800px) 100vw, 800px" data-ll-status="loaded" sizes="(max-width: 800px) 100vw, 800px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-300x75.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-768x192.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-600x150.webp 600w"><noscript><img decoding="async" width="800" height="200" class="gb-image gb-image-0f159cb1" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1.webp" alt="gpo troubleshooting gpupdate" title="group-policy-troubleshooting-1" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-300x75.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-768x192.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-1-600x150.webp 600w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></figure>
+
+
+
+<p>The command should return with no errors. Sometimes running this command can resolve or force a GPO to apply. Depending on the policy it may prompt you to reboot before the policy goes into effect.  </p>
+
+
+
+<p><strong>2. Check sysvol acccess</strong></p>
+
+
+
+<p>From a client computer test access to the sysvol directory.</p>
+
+
+
+<p>Click on start then type in the UNC path to your domain controller. My domain controller hostname is DC1 so the UNC path is \\DC1. Click on SYSVOL, your domain and then policies. You should see a list of folders with random numbers and letters, these are the GPOs. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-0c6b934f"><img decoding="async" width="804" height="404" class="gb-image gb-image-0c6b934f perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-troubleshooting-2.webp" alt="sysvol directory" title="group-policy-troubleshooting-2" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-600x301.webp 600w" data-sizes="(max-width: 804px) 100vw, 804px" data-ll-status="loaded" sizes="(max-width: 804px) 100vw, 804px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-600x301.webp 600w"><noscript><img decoding="async" width="804" height="404" class="gb-image gb-image-0c6b934f" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2.webp" alt="sysvol directory" title="group-policy-troubleshooting-2" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2.webp 804w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-300x151.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-768x386.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-2-600x301.webp 600w" sizes="(max-width: 804px) 100vw, 804px" /></noscript></figure>
+
+
+
+<p>If you don’t see or cannot access this folder then that will prevent GPOs from working. </p>
+
+
+
+<p>Make sure you test the sysvol access by hostname and not IP address. </p>
+
+
+
+<p><strong>3: Check event logs</strong></p>
+
+
+
+<p>On the client computer check the system event logs. The event logs can provide details as to why a GPO failed. The below example is an error from a GPO that tried to install the chrome browser. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-51c0ecb8"><img decoding="async" width="800" height="400" class="gb-image gb-image-51c0ecb8 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-troubleshooting-3.webp" alt="gpo event log error" title="group-policy-troubleshooting-3" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-600x300.webp 600w" data-sizes="(max-width: 800px) 100vw, 800px" data-ll-status="loaded" sizes="(max-width: 800px) 100vw, 800px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-600x300.webp 600w"><noscript><img decoding="async" width="800" height="400" class="gb-image gb-image-51c0ecb8" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3.webp" alt="gpo event log error" title="group-policy-troubleshooting-3" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-3-600x300.webp 600w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></figure>
+
+
+
+<p><strong>4. GPResult command</strong></p>
+
+
+
+<p>The gpresult command will show you which group policies are applied to a user and computer. This is a great command for GPO troubleshooting, it is the best option to determine which GPOs are being applied.  You will need to know which GPOs you are expecting to see, which you can determine from the GPMC. </p>
+
+
+
+<p><strong>To see computer policy GPOs you must run the command prompt as administrator. </strong></p>
+
+
+
+<p>From the command prompt run <strong>gpresult /r</strong>.</p>
+
+
+
+<p>The command should return the computer settings and the applied group policy objects. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-ba25b9d5"><img decoding="async" width="800" height="400" class="gb-image gb-image-ba25b9d5 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-troubleshooting-4.webp" alt="gpresult command troubleshoot gpo" title="group-policy-troubleshooting-4" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-600x300.webp 600w" data-sizes="(max-width: 800px) 100vw, 800px" data-ll-status="loaded" sizes="(max-width: 800px) 100vw, 800px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-600x300.webp 600w"><noscript><img decoding="async" width="800" height="400" class="gb-image gb-image-ba25b9d5" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp" alt="gpresult command troubleshoot gpo" title="group-policy-troubleshooting-4" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-600x300.webp 600w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></figure>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="800" height="400" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-troubleshooting-4.webp" alt="gpresult command" class="wp-image-32622 perfmatters-lazy entered pmloaded" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-600x300.webp 600w" data-sizes="(max-width: 800px) 100vw, 800px" data-ll-status="loaded" sizes="(max-width: 800px) 100vw, 800px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-600x300.webp 600w"><noscript><img decoding="async" width="800" height="400" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp" alt="gpresult command" class="wp-image-32622" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-4-600x300.webp 600w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></figure>
+
+
+
+<p></p>
+
+
+
+<p>In the screenshot above you can see 4 GPOs are applied to the computer. </p>
+
+
+
+<p>Now close the command prompt and run it as a regular user. For example, I’m logged in as user “Adam.Reed”. </p>
+
+
+
+<figure class="gb-block-image gb-block-image-1054415a"><img decoding="async" width="800" height="400" class="gb-image gb-image-1054415a perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/group-policy-troubleshooting-5.webp" alt="gpresult user settings gpo" title="group-policy-troubleshooting-5" data-src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5.webp" data-srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-600x300.webp 600w" data-sizes="(max-width: 800px) 100vw, 800px" data-ll-status="loaded" sizes="(max-width: 800px) 100vw, 800px" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-600x300.webp 600w"><noscript><img decoding="async" width="800" height="400" class="gb-image gb-image-1054415a" src="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5.webp" alt="gpresult user settings gpo" title="group-policy-troubleshooting-5" srcset="https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5.webp 800w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-300x150.webp 300w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-768x384.webp 768w, https://activedirectorypro.com/wp-content/uploads/2022/09/group-policy-troubleshooting-5-600x300.webp 600w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></figure>
+
+
+
+<p>In the screenshot above you can see 3 GPOs are applied to the user Adam Reed but one was not applied due to security filtering.</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>5. Using RSOP (Resultant Set of Policy). </strong></p>
+
+
+
+<p>Only use this command if you have verified the GPOs are applied with the gpresult command. </p>
+
+
+
+<p>This command will show you what policy changes are being made from the applied GPOs. So again it’s not going to help you if the GPOs are not even being applied. There are several steps to using this command, you can refer to my <a href="https://activedirectorypro.com/how-to-use-rsop-to-check-and-troubleshoot-group-policy-settings/" data-type="post" data-id="327">RSoP guide</a> for complete instructions. </p>
+
+
+
+<p><strong>6. GPO order of precedence</strong></p>
+
+
+
+<p>Maybe you have no errors, all GPOs are applied as expected but the policy is still wrong. </p>
+
+
+
+<p>Did you check the GPO order of precedence in the management console? </p>
+
+
+
+<p>Remember the last GPO applied takes precedence. Another way to think of it is the GPO that is closest to the object (user or computer) wins. </p>
+
+
+
+<p>I hope you enjoyed this group policy guide. If you have comments or questions post them below in the comment section. </p>
+
+
+
+<p><strong>Recommended Reading:</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://activedirectorypro.com/configure-group-policy-central-store/" data-type="post" data-id="4697">Configure Group Policy Central Store</a></li>
+
+
+
+<li><a href="https://activedirectorypro.com/remove-local-admin-rights-using-group-policy/" data-type="post" data-id="10247">Remove Users from Local Administrator Group GPO </a></li>
+</ul>
+
+</div></div>
+
+<div class="gb-container gb-container-10da19dd"><div class="gb-inside-container"></div></div>
+
+
+<p></p>
+		</div>
+
+				<footer class="entry-meta" aria-label="Entry meta">
+			<span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z"></path></svg></span><span class="screen-reader-text">Categories </span><a href="https://activedirectorypro.com/category/group-policy/" rel="category tag">Group Policy</a></span> 		<nav id="nav-below" class="post-navigation" aria-label="Posts">
+			<div class="nav-previous"><span class="gp-icon icon-arrow-left"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 138.212c0 2.265-1.133 4.813-2.832 6.512L64.276 256.001l111.317 111.277c1.7 1.7 2.832 4.247 2.832 6.513 0 2.265-1.133 4.813-2.832 6.512L161.43 394.46c-1.7 1.7-4.249 2.832-6.514 2.832-2.266 0-4.816-1.133-6.515-2.832L16.407 262.514c-1.699-1.7-2.832-4.248-2.832-6.513 0-2.265 1.133-4.813 2.832-6.512l131.994-131.947c1.7-1.699 4.249-2.831 6.515-2.831 2.265 0 4.815 1.132 6.514 2.831l14.163 14.157c1.7 1.7 2.832 3.965 2.832 6.513z" fill-rule="nonzero"></path></svg></span><span class="prev"><a href="https://activedirectorypro.com/find-microsoft-365-tenant-id/" rel="prev">How to Find Microsoft 365 Tenant ID</a></span></div><div class="nav-next"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero"></path></svg></span><span class="next"><a href="https://activedirectorypro.com/give-full-mailbox-permissions-to-another-user/" rel="next">Give Full Mailbox Permissions to Another User</a></span></div>		</nav>
+				</footer>
+			</div>
+</article>
+
+			<div class="comments-area">
+				<div id="comments">
+
+	
+</div><!-- #comments -->
+			</div>
+
+					</main>
+	</div>
+
+	
+	</div>
+</div>
+
+
+<div class="site-footer">
+	
+<footer class="gbp-section gb-element-0f784ee5">
+<div class="gbp-section__inner gb-element-2586b92b">
+<div class="gb-element-6e704d51">
+<div class="gb-element-71aac024">
+<img decoding="async" width="200" height="43" class="gb-media-89daa1e1 perfmatters-lazy entered pmloaded" src="./Group Policy Management Guide - Active Directory Pro_files/logo_top.png" alt="" title="logo_top" data-src="https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png" data-ll-status="loaded"><noscript><img decoding="async" width="200" height="43" class="gb-media-89daa1e1" src="https://activedirectorypro.com/wp-content/uploads/2025/11/logo_top.png" alt="" title="logo_top"/></noscript>
+
+
+
+<div class="gb-element-a2b638d8">
+<a class="gb-text-24425b3a" href="https://x.com/adpro99" aria-label="Link to social media page"><span class="gb-shape"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polygon points="48 40 96 40 208 216 160 216 48 40" opacity="0.2"></polygon><polygon points="48 40 96 40 208 216 160 216 48 40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polygon><line x1="113.88" y1="143.53" x2="48" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="208" y1="40" x2="142.12" y2="112.47" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg></span></a>
+
+
+
+<a class="gb-text-1f822009" href="https://www.facebook.com/people/Active-Directory-Pro/100075594290972/" aria-label="Link to social media page"><span class="gb-shape"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" opacity="0.2"></circle><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg></span></a>
+
+
+
+<a class="gb-text-86f38eb4" aria-label="Link to social media page" href="https://www.linkedin.com/company/active-directory-pro"><span class="gb-shape"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></span></a>
+
+
+
+<a class="gb-text-31ba4be1" href="https://www.youtube.com/c/ActiveDirectoryPro" aria-label="Link to social media page"><span class="gb-shape"><svg aria-hidden="true" role="img" height="1em" width="1em" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span></a>
+</div>
+
+
+
+<p class="gb-text-53128b9a"><span class="gb-shape"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" opacity="0.2"></circle><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><path d="M160,152a40,40,0,1,1,0-48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg></span><span class="gb-text">2025 Active Directory Pro LLC.</span></p>
+</div>
+</div>
+
+
+
+<div class="gb-element-ba846b51">
+<p class="gb-text gb-text-449ab36c">Product</p>
+
+
+
+<a class="gb-text gb-text-8397340e smooth-scroll" href="https://activedirectorypro.com/ad-pro-toolkit/">AD Pro Toolkit</a>
+
+
+
+<a class="gb-text gb-text-5a0206b8 smooth-scroll" href="https://activedirectorypro.com/365-pro-toolkit/">365 Pro Toolkit</a>
+
+
+
+<a class="gb-text gb-text-db47c569 smooth-scroll" href="https://activedirectorypro.com/ad-pro-toolkit/ad-cleanup-tool/">AD Cleanup Tool</a>
+
+
+
+<a class="gb-text gb-text-dea2abeb smooth-scroll" href="https://activedirectorypro.com/reporting/">AD Reporting Tool</a>
+
+
+
+<a class="gb-text gb-text-b6c42ff0 smooth-scroll" href="https://activedirectorypro.com/unlock-tool/">User Unlock Tool</a>
+</div>
+
+
+
+<div class="gb-element-66a9fa7e">
+<p class="gb-text gb-text-ae85e960">Company</p>
+
+
+
+<a class="gb-text gb-text-a3706837 smooth-scroll" href="https://activedirectorypro.com/contact/">Contact Us</a>
+
+
+
+<a class="gb-text gb-text-b6124c98 smooth-scroll" href="https://activedirectorypro.com/privacy-policy/">Privacy Policy</a>
+
+
+
+<a class="gb-text gb-text-2c5131e0 smooth-scroll" href="https://activedirectorypro.com/eula/">Terms of Service</a>
+
+
+
+<a class="gb-text gb-text-8f95cfdb smooth-scroll" href="https://activedirectorypro.com/security/">Security Policy</a>
+</div>
+</div>
+</footer>
+
+
+
+<p></p>
+</div>
+
+		<nav id="generate-slideout-menu" class="main-navigation slideout-navigation offside offside--right">
+			<div class="inside-navigation grid-container grid-parent">
+				<button class="slideout-exit has-svg-icon"><span class="gp-icon pro-close">
+				<svg viewBox="0 0 512 512" aria-hidden="true" role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em">
+					<path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path>
+				</svg>
+			</span> <span class="screen-reader-text">Close</span></button><div class="main-nav"><ul id="menu-nav_menu-1" class=" slideout-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-54422"><a href="https://activedirectorypro.com/group-policy-guide/#">Products<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewBox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu" id="menu-item-89656-sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54423"><a href="https://activedirectorypro.com/ad-pro-toolkit/">AD Pro Toolkit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54424"><a href="https://activedirectorypro.com/365-pro-toolkit/">365 Pro Toolkit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55622"><a href="https://activedirectorypro.com/reporting/">AD Reporting Tool</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60181"><a href="https://activedirectorypro.com/pricing/">Pricing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60202"><a href="https://docs.activedirectorypro.com/">Docs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-58369"><a href="https://activedirectorypro.com/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60327"><a href="https://activedirectorypro.com/download/">Download</a></li>
+</ul></div>			</div><!-- .inside-navigation -->
+		</nav><!-- #site-navigation -->
+
+					<div class="slideout-overlay">
+							</div>
+			<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/generatepress\/*","\/*\\?(.+)","\/checkout\/*"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div class="edd-free-downloads-modal-wrapper edd-free-downloads"><span class="edd-loading"></span><div id="edd-free-downloads-modal" style="display:none"></div></div><script id="generate-a11y" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("pointerdown",(function(){e.classList.add("using-mouse")}),{passive:!0}),e.addEventListener("keydown",(function(){e.classList.remove("using-mouse")}),{passive:!0})}}();
+</script>
+<script src="./Group Policy Management Guide - Active Directory Pro_files/sticky.min.js.download" id="generate-sticky-js" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+<script id="generate-offside-js-extra" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+var offSide = {"side":"right"};
+</script>
+<script src="./Group Policy Management Guide - Active Directory Pro_files/offside.min.js.download" id="generate-offside-js" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+<script id="generate-smooth-scroll-js-extra" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+var gpSmoothScroll = {"elements":[".smooth-scroll","li.smooth-scroll a"],"duration":"800","offset":""};
+</script>
+<script src="./Group Policy Management Guide - Active Directory Pro_files/smooth-scroll.min.js.download" id="generate-smooth-scroll-js" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+<script id="edd-ajax-js-extra" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+var edd_scripts = {"ajaxurl":"https:\/\/activedirectorypro.com\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"0","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","is_checkout":"0","default_gateway":"stripe","redirect_to_checkout":"0","checkout_page":"https:\/\/activedirectorypro.com\/checkout\/","permalinks":"1","quantities_enabled":"1","taxes_enabled":"0","current_page":"32455"};
+</script>
+<!--[if lte IE 11]>
+<script src="https://activedirectorypro.com/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.6.0" id="generate-classlist-js"></script>
+<![endif]-->
+<script id="generate-menu-js-before" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+var generatepressMenu = {"toggleOpenedSubMenus":true,"openSubMenuLabel":"Open Sub-Menu","closeSubMenuLabel":"Close Sub-Menu"};
+</script>
+<script src="./Group Policy Management Guide - Active Directory Pro_files/menu.min.js.download" id="generate-menu-js" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+<script id="perfmatters-lazy-load-js-before">
+window.lazyLoadOptions={elements_selector:"img[data-src],.perfmatters-lazy,.perfmatters-lazy-css-bg",thresholds:"0px 0px",class_loading:"pmloading",class_loaded:"pmloaded",callback_loaded:function(element){if(element.tagName==="IFRAME"){if(element.classList.contains("pmloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener("LazyLoad::Initialized",function(e){var lazyLoadInstance=e.detail.instance;});
+</script>
+<script async="" src="./Group Policy Management Guide - Active Directory Pro_files/lazyload.min.js.download" id="perfmatters-lazy-load-js"></script>
+<script id="edd-free-downloads-extend-js-extra" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+var edd_free_downloads_vars = {"close_button":"overlay","user_registration":"false","require_name":"false","download_loading":"Please Wait... ","download_label":"Download Now","modal_download_label":"Download Now","has_ajax":"true","ajaxurl":"https:\/\/activedirectorypro.com\/wp-admin\/admin-ajax.php","mobile_url":"\/group-policy-guide\/?edd-free-download=true","form_class":"edd_purchase_submit_wrapper","bypass_logged_in":"false","is_download":"false","edd_is_mobile":"false","success_page":"https:\/\/activedirectorypro.com\/confirmation\/","guest_checkout_disabled":"false","email_verification":"false","on_complete_handler":"redirect","on_complete_delay":"2000","error_label":"Error:"};
+</script>
+
+<script id="perfmatters-delayed-scripts-js">(function(){window.pmDC=1;window.pmDT=15;if(window.pmDT){var e=setTimeout(d,window.pmDT*1e3)}const t=["keydown","mousedown","mousemove","wheel","touchmove","touchstart","touchend"];const n={normal:[],defer:[],async:[]};const o=[];const i=[];var r=false;var a="";window.pmIsClickPending=false;t.forEach(function(e){window.addEventListener(e,d,{passive:true})});if(window.pmDC){window.addEventListener("touchstart",b,{passive:true});window.addEventListener("mousedown",b)}function d(){if(typeof e!=="undefined"){clearTimeout(e)}t.forEach(function(e){window.removeEventListener(e,d,{passive:true})});if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",s)}else{s()}}async function s(){c();u();f();m();await w(n.normal);await w(n.defer);await w(n.async);await p();document.querySelectorAll("link[data-pmdelayedstyle]").forEach(function(e){e.setAttribute("href",e.getAttribute("data-pmdelayedstyle"))});window.dispatchEvent(new Event("perfmatters-allScriptsLoaded")),E().then(()=>{h()})}function c(){let o={};function e(t,e){function n(e){return o[t].delayedEvents.indexOf(e)>=0?"perfmatters-"+e:e}if(!o[t]){o[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},delayedEvents:[]};t.addEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.add.apply(t,arguments)};t.removeEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.remove.apply(t,arguments)}}o[t].delayedEvents.push(e)}function t(t,n){const e=t[n];Object.defineProperty(t,n,{get:!e?function(){}:e,set:function(e){t["perfmatters"+n]=e}})}e(document,"DOMContentLoaded");e(window,"DOMContentLoaded");e(window,"load");e(document,"readystatechange");t(document,"onreadystatechange");t(window,"onload")}function u(){let n=window.jQuery;Object.defineProperty(window,"jQuery",{get(){return n},set(t){if(t&&t.fn&&!o.includes(t)){t.fn.ready=t.fn.init.prototype.ready=function(e){if(r){e.bind(document)(t)}else{document.addEventListener("perfmatters-DOMContentLoaded",function(){e.bind(document)(t)})}};const e=t.fn.on;t.fn.on=t.fn.init.prototype.on=function(){if(this[0]===window){function t(e){e=e.split(" ");e=e.map(function(e){if(e==="load"||e.indexOf("load.")===0){return"perfmatters-jquery-load"}else{return e}});e=e.join(" ");return e}if(typeof arguments[0]=="string"||arguments[0]instanceof String){arguments[0]=t(arguments[0])}else if(typeof arguments[0]=="object"){Object.keys(arguments[0]).forEach(function(e){delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}}return e.apply(this,arguments),this};o.push(t)}n=t}})}function f(){document.querySelectorAll("script[type=pmdelayedscript]").forEach(function(e){if(e.hasAttribute("src")){if(e.hasAttribute("defer")&&e.defer!==false){n.defer.push(e)}else if(e.hasAttribute("async")&&e.async!==false){n.async.push(e)}else{n.normal.push(e)}}else{n.normal.push(e)}})}function m(){var o=document.createDocumentFragment();[...n.normal,...n.defer,...n.async].forEach(function(e){var t=e.getAttribute("src");if(t){var n=document.createElement("link");n.href=t;if(e.getAttribute("data-perfmatters-type")=="module"){n.rel="modulepreload"}else{n.rel="preload";n.as="script"}o.appendChild(n)}});document.head.appendChild(o)}async function w(e){var t=e.shift();if(t){await l(t);return w(e)}return Promise.resolve()}async function l(t){await v();return new Promise(function(e){const n=document.createElement("script");[...t.attributes].forEach(function(e){let t=e.nodeName;if(t!=="type"){if(t==="data-perfmatters-type"){t="type"}n.setAttribute(t,e.nodeValue)}});if(t.hasAttribute("src")){n.addEventListener("load",e);n.addEventListener("error",e)}else{n.text=t.text;e()}t.parentNode.replaceChild(n,t)})}async function p(){r=true;await v();document.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();window.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();document.dispatchEvent(new Event("perfmatters-readystatechange"));await v();if(document.perfmattersonreadystatechange){document.perfmattersonreadystatechange()}await v();window.dispatchEvent(new Event("perfmatters-load"));await v();if(window.perfmattersonload){window.perfmattersonload()}await v();o.forEach(function(e){e(window).trigger("perfmatters-jquery-load")})}async function v(){return new Promise(function(e){requestAnimationFrame(e)})}function h(){window.removeEventListener("touchstart",b,{passive:true});window.removeEventListener("mousedown",b);i.forEach(e=>{if(e.target.outerHTML===a){e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:true,cancelable:true}))}})}function E(){return new Promise(e=>{window.pmIsClickPending?g=e:e()})}function y(){window.pmIsClickPending=true}function g(){window.pmIsClickPending=false}function L(e){e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");i.push(e),e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();g()}function b(e){if(e.target.tagName!=="HTML"){if(!a){a=e.target.outerHTML}window.addEventListener("touchend",A);window.addEventListener("mouseup",A);window.addEventListener("touchmove",k,{passive:true});window.addEventListener("mousemove",k);e.target.addEventListener("click",L);C(e.target,"onclick","pm-onclick");y()}}function k(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k);e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");g()}function A(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k)}function C(e,t,n){if(e.hasAttribute&&e.hasAttribute(t)){event.target.setAttribute(n,event.target.getAttribute(t));event.target.removeAttribute(t)}}})();</script><iframe height="0" width="0" style="display: none; visibility: hidden;" src="./Group Policy Management Guide - Active Directory Pro_files/saved_resource.html"></iframe>
+
+</body></html>

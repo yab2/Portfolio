@@ -1,0 +1,19 @@
+:root {
+--gp-font--barlow-semi-condensed: "Barlow Semi Condensed";
+--gp-font--nunito-sans: "Nunito Sans";
+}
+
+@font-face {
+	font-display: auto;
+	font-family: "Barlow Semi Condensed";
+	font-style: normal;
+	font-weight: 700;
+	src: url('https://activedirectorypro.com/wp-content/uploads/generatepress/fonts/barlow-semi-condensed/wlpigxjLBV1hqnzfr-F8sEYMB0Yybp0mudRfw6-PBWEki52WfA.woff2') format('woff2');
+}
+@font-face {
+	font-display: auto;
+	font-family: "Nunito Sans";
+	font-style: normal;
+	font-weight: 200 1000;
+	src: url('https://activedirectorypro.com/wp-content/uploads/generatepress/fonts/nunito-sans/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQLL50tE8.woff2') format('woff2');
+}

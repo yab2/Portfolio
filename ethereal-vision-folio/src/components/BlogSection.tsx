@@ -26,34 +26,44 @@ const BlogSection = () => {
 
   const blogPosts: BlogPostData[] = [
     {
-      id: 'printer-troubleshooting',
-      title: 'Printer Troubleshooting Guide',
-      description: 'A comprehensive step-by-step guide for resolving common printer issues on Windows and Mac systems. Learn how to fix connectivity, driver, and print queue problems.',
-      category: 'IT Support',
-      readTime: '8 min read',
+      id: 'windows-login-troubleshooting',
+      title: 'Windows Login Troubleshooting',
+      description: 'Fix Windows login issues including incorrect password, missing password field, and account access problems. Complete step-by-step troubleshooting guide with 10 proven solutions.',
+      category: 'Home Lab Project',
+      readTime: '9 min read',
       date: 'December 2024',
-      thumbnail: '/src/assets/blog/printer-troubleshooting/image.png',
-      tags: ['Windows', 'Mac', 'Troubleshooting', 'Help Desk'],
+      thumbnail: '/blog/windows-login/Cant-log-into-Windows.webp',
+      tags: ['Windows', 'Login Issues', 'Troubleshooting', 'Help Desk'],
     },
     {
       id: 'network-troubleshooting',
       title: 'Network Connection Troubleshooting',
       description: 'Fix internet connectivity issues with 8 simple troubleshooting steps. Learn how to diagnose and resolve Wi-Fi, router, and network adapter problems.',
-      category: 'Network Support',
+      category: 'Home Lab Project',
       readTime: '10 min read',
       date: 'December 2024',
-      thumbnail: '/src/assets/blog/network-troubleshooting/router.png',
+      thumbnail: '/blog/network-troubleshooting/router.png',
       tags: ['Windows', 'Wi-Fi', 'Networking', 'System Admin'],
     },
     {
-      id: 'active-directory-password',
-      title: 'Active Directory Password Expiration',
-      description: 'Configure Windows Group Policy to automatically notify users before their passwords expire. Reduce help desk tickets and prevent account lockouts.',
-      category: 'System Administration',
-      readTime: '6 min read',
+      id: 'group-policy-troubleshooting',
+      title: 'Group Policy Troubleshooting',
+      description: 'Diagnose and resolve common Group Policy issues in Active Directory. Learn essential commands, tools, and best practices for GP troubleshooting.',
+      category: 'Home Lab Project',
+      readTime: '10 min read',
       date: 'December 2024',
-      thumbnail: '/src/assets/blog/active-directory-password/notify-users-of-password-expiration-active-directory-886x590.jpg',
-      tags: ['Active Directory', 'Group Policy', 'Security', 'System Admin'],
+      thumbnail: '/blog/group-policy/group-policy-troubleshooting-1.webp',
+      tags: ['Active Directory', 'Group Policy', 'Troubleshooting', 'System Admin'],
+    },
+    {
+      id: 'printer-troubleshooting',
+      title: 'Printer Troubleshooting Guide',
+      description: 'A comprehensive step-by-step guide for resolving common printer issues on Windows and Mac systems. Learn how to fix connectivity, driver, and print queue problems.',
+      category: 'Home Lab Project',
+      readTime: '8 min read',
+      date: 'December 2024',
+      thumbnail: '/blog/printer-troubleshooting/image.png',
+      tags: ['Windows', 'Mac', 'Troubleshooting', 'Help Desk'],
     },
   ];
 
@@ -97,14 +107,14 @@ const BlogSection = () => {
     <>
       {selectedPostId && <BlogPost postId={selectedPostId} onClose={() => setSelectedPostId(null)} />}
 
-      <section ref={sectionRef} id="guides" className="relative py-32 overflow-hidden">
+      <section ref={sectionRef} id="projects" className="relative py-32 overflow-hidden">
       <div className="container mx-auto px-6">
         <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4">
-            Featured <span className="glow-text">IT Support Guides</span>
+            My <span className="glow-text">Home Labs</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-            Professional step-by-step troubleshooting guides and technical documentation showcasing expertise in IT support, network administration, and system management
+            Hands-on IT troubleshooting projects demonstrating real-world help desk and system administration skills you can practice at home
           </p>
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mt-6" />
         </div>

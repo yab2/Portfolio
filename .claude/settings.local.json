@@ -6,7 +6,8 @@
       "Bash(git rm:*)",
       "Bash(npm run build:*)",
       "Bash(git commit:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(gemini \"Generate a professional network diagram showing a small business network topology with internet connection, firewall, core switch, access switches, servers, and workstations. Use clean lines and professional network symbols. Save as step1-requirements.png\")"
     ],
     "deny": [],
     "ask": []

@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from './ui/button';
 import { BookOpen, Clock, Tag } from 'lucide-react';
-import BlogPost from './BlogPost';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,10 +19,10 @@ interface BlogPostData {
 }
 
 const BlogSection = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
 
   const blogPosts: BlogPostData[] = [
     {
@@ -104,10 +104,7 @@ const BlogSection = () => {
   }, []);
 
   return (
-    <>
-      {selectedPostId && <BlogPost postId={selectedPostId} onClose={() => setSelectedPostId(null)} />}
-
-      <section ref={sectionRef} id="projects" className="relative py-32 overflow-hidden">
+    <section ref={sectionRef} id="projects" className="relative py-32 overflow-hidden">
       <div className="container mx-auto px-6">
         <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tighter mb-4">
@@ -124,7 +121,7 @@ const BlogSection = () => {
             <div
               key={post.id}
               className="group cursor-pointer"
-              onClick={() => setSelectedPostId(post.id)}
+              onClick={() => navigate(`/project/${post.id}`)}
             >
               <div className="glass-card rounded-3xl overflow-hidden h-full transition-all duration-500 hover:glow-border hover:scale-105">
                 {/* Thumbnail */}
@@ -198,7 +195,6 @@ const BlogSection = () => {
         </div>
       </div>
     </section>
-    </>
   );
 };
 

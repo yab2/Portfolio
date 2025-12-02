@@ -1,25 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dires - IT Technician & System Administrator</title>
-
-    <!-- Prevent white flash on page load -->
-    <style>
-      html {
-        background: linear-gradient(135deg, hsl(230, 35%, 7%) 0%, hsl(240, 40%, 10%) 100%);
-      }
-      body {
-        background: linear-gradient(135deg, hsl(230, 35%, 7%) 0%, hsl(240, 40%, 10%) 100%);
-        color: hsl(210, 100%, 95%);
-        margin: 0;
-        padding: 0;
-      }
-      #root {
-        background: transparent;
-      }
-    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -43,6 +34,6 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx?t=1764688558395"></script>
   </body>
 </html>

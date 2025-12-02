@@ -64,7 +64,7 @@ const ContactSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <a
-              href="https://github.com"
+              href="https://github.com/yab2"
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card p-8 rounded-3xl text-center group hover:glow-border transition-all duration-300"
@@ -75,11 +75,11 @@ const ContactSection = () => {
                 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform"
               />
               <h3 className="text-lg font-semibold mb-2">GitHub</h3>
-              <p className="text-sm text-muted-foreground">@diresicode</p>
+              <p className="text-sm text-muted-foreground">@yab2</p>
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/yeabsira702"
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card p-8 rounded-3xl text-center group hover:glow-border transition-all duration-300"
@@ -90,11 +90,11 @@ const ContactSection = () => {
                 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform"
               />
               <h3 className="text-lg font-semibold mb-2">LinkedIn</h3>
-              <p className="text-sm text-muted-foreground">Dires Abdi</p>
+              <p className="text-sm text-muted-foreground">Yeabsira Dires</p>
             </a>
 
             <a
-              href="mailto:hello@dires.dev"
+              href="mailto:yab@duck.com"
               className="glass-card p-8 rounded-3xl text-center group hover:glow-border transition-all duration-300"
             >
               <EnvelopeSimple
@@ -103,7 +103,7 @@ const ContactSection = () => {
                 className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform"
               />
               <h3 className="text-lg font-semibold mb-2">Email</h3>
-              <p className="text-sm text-muted-foreground">hello@dires.dev</p>
+              <p className="text-sm text-muted-foreground">yab@duck.com</p>
             </a>
           </div>
 

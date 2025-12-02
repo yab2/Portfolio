@@ -49,7 +49,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-background via-[hsl(240,40%,10%)] to-background"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-gradient-to-br from-background via-[hsl(240,40%,10%)] to-background"
     >
       {/* Animated glowing orbs */}
       <div className="glow-orb w-96 h-96 bg-primary/20 absolute top-1/4 left-1/4 animate-glow-pulse" />

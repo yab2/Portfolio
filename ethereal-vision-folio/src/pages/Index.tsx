@@ -3,6 +3,7 @@ import LoadingScreen from '@/components/LoadingScreen';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import CertificationsSection from '@/components/CertificationsSection';
 import BlogSection from '@/components/BlogSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -21,23 +22,22 @@ const Index = () => {
   }, [loading]);
 
   return (
-    <>
+    <div className="min-h-screen bg-background">
       {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
-      
-      {!loading && (
-        <div className="relative">
-          <FloatingOrbs />
-          <Navigation />
-          <main className="relative z-10">
-            <HeroSection />
-            <AboutSection />
-            <BlogSection />
-            <ContactSection />
-          </main>
-          <Footer />
-        </div>
-      )}
-    </>
+
+      <div className={`relative transition-opacity duration-500 ${loading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <FloatingOrbs />
+        <Navigation />
+        <main className="relative z-10">
+          <HeroSection />
+          <AboutSection />
+          <CertificationsSection />
+          <BlogSection />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 };
 

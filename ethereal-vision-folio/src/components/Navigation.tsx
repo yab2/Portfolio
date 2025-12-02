@@ -17,6 +17,7 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -46,7 +47,7 @@ const Navigation = () => {
           
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/yab2"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-all duration-300 hover:scale-110"
@@ -54,7 +55,7 @@ const Navigation = () => {
               <GithubLogo size={24} weight="light" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/yeabsira702"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/60 hover:text-primary transition-all duration-300 hover:scale-110"
@@ -92,10 +93,10 @@ const Navigation = () => {
           ))}
           
           <div className="flex items-center gap-6 pt-4 border-t border-border">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/yab2" target="_blank" rel="noopener noreferrer">
               <GithubLogo size={28} weight="light" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/yeabsira702" target="_blank" rel="noopener noreferrer">
               <LinkedinLogo size={28} weight="light" />
             </a>
           </div>

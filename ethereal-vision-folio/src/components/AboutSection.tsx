@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CloudArrowUp, ShieldCheck, Infinity, Package, CloudCheck, Lock } from 'phosphor-react';
+import { CloudArrowUp, ShieldCheck, Infinity, Package, CloudCheck, Lock, DownloadSimple } from 'phosphor-react';
+import { Button } from './ui/button';
 // Profile image moved to public assets
 // import profileImg from '@/assets/profile.png';
 
@@ -110,6 +111,16 @@ const AboutSection = () => {
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
               My approach combines proactive system maintenance with rapid problem resolution, ensuring every user has the support they need. From troubleshooting hardware issues to managing user accounts, I keep technology running smoothly so businesses can focus on their goals.
             </p>
+
+            {/* Resume Download Button */}
+            <div className="pt-4">
+              <a href="/resume/yeabsira_dires_resume.pdf" download="Yeabsira_Dires_Resume.pdf">
+                <Button className="group">
+                  <DownloadSimple size={20} weight="bold" className="mr-2 group-hover:animate-bounce" />
+                  Download Resume
+                </Button>
+              </a>
+            </div>
 
             {/* Skills Grid */}
             <div ref={skillsRef} className="grid grid-cols-3 gap-4 pt-8">

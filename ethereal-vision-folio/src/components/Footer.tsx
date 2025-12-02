@@ -72,6 +72,12 @@ const Footer = () => {
               About
             </a>
             <a
+              href="#certifications"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300 font-light"
+            >
+              Certifications
+            </a>
+            <a
               href="#projects"
               className="text-muted-foreground hover:text-primary transition-colors duration-300 font-light"
             >
@@ -88,7 +94,7 @@ const Footer = () => {
           {/* Social Icons */}
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/yab2"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
@@ -96,7 +102,7 @@ const Footer = () => {
               <GithubLogo size={28} weight="light" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/yeabsira702"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"

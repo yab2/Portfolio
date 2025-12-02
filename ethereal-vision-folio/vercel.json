@@ -8,6 +8,10 @@
       "dest": "/favicon.ico"
     },
     {
+      "src": "/blog/(.*)",
+      "dest": "/blog/$1"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
